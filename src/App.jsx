@@ -1,7 +1,15 @@
 // App.jsx
 import { useState, useRef } from 'react';
 import './App.css';
+
+import photo00 from './assets/photos/photo00.jpeg';
 import photo01 from './assets/photos/photo01.jpeg';
+import photo02 from './assets/photos/photo02.jpeg';
+import photo03 from './assets/photos/photo03.jpeg';
+import photo04 from './assets/photos/photo04.jpeg';
+import photo05 from './assets/photos/photo05.jpeg';
+import photo06 from './assets/photos/photo06.jpeg';
+
 // import vespucioAudio from './assets/music/Vespucio.wav';
 
 function App() {
@@ -11,8 +19,7 @@ function App() {
   const audioRef = useRef(null);
 
   const togglePlay = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
+    if (isPlaying) {git
     } else {
       audioRef.current.play();
     }
@@ -45,13 +52,13 @@ function App() {
   return (
     <div className="y2k-container">
       {/* AUDIO ELEMENT */}
-      <audio
+      {/* <audio
         ref={audioRef}
         src={vespucioAudio}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={() => setIsPlaying(false)}
-      />
+      /> */}
 
       {/* HEADER */}
       <header className="y2k-header">
@@ -64,20 +71,20 @@ function App() {
         
         <div className="social-buttons">
           <a 
-            href="https://instagram.com" 
+            href="https://www.instagram.com/luz.fija/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-btn instagram"
           >
-            📷 INSTAGRAM
+             INSTAGRAM
           </a>
           <a 
-            href="https://youtube.com" 
+            href="https://www.youtube.com/@luzfija" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-btn youtube"
           >
-            ▶ YOUTUBE
+             YOUTUBE
           </a>
         </div>
       </header>
@@ -85,7 +92,7 @@ function App() {
       {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-image-wrapper">
-          <img src={photo01} alt="Luz Fija - Vespucio" className="hero-image" />
+          <img src={photo06} alt="Luz Fija - Vespucio" className="hero-image" />
           <div className="hero-glitch-overlay"></div>
         </div>
       </section>
@@ -98,21 +105,21 @@ function App() {
           <div className="news-card">
             <h3 className="section-title cyan">📰 NOTICIAS</h3>
             <div className="news-item">
-              <span className="news-date">15.01.2000</span>
+              <span className="news-date">15.01.2026</span>
               <p>✨ Nuevo single "Vespucio" disponible pronto</p>
             </div>
             <div className="news-item">
-              <span className="news-date">10.01.2000</span>
-              <p>🎸 Grabaciones en Estudio Sur</p>
+              <span className="news-date">10.01.2026</span>
+              <p>Grabaciones en la sala de Luz Fija</p>
             </div>
             <div className="news-item">
-              <span className="news-date">05.01.2000</span>
-              <p>📺 Videoclip en producción</p>
+              <span className="news-date">05.01.2026</span>
+              <p>Videoclip en producción</p>
             </div>
             
             <div className="construction-box">
-              <span>🚧 UNDER CONSTRUCTION 🚧</span>
-              <marquee className="y2k-marquee-small">⚡ PRÓXIMAS FECHAS ⚡</marquee>
+              <span>UNDER CONSTRUCTION</span>
+              <marquee className="y2k-marquee-small"> PRÓXIMAS FECHAS</marquee>
             </div>
             
             <div className="counter">
@@ -134,23 +141,17 @@ function App() {
         {/* CONTENIDO PRINCIPAL - BIO + REPRODUCTOR */}
         <main className="main-content">
           <div className="bio-card">
-            <h3 className="section-title yellow">📖 BIOGRAFÍA</h3>
+            <h3 className="section-title yellow">BIOGRAFÍA</h3>
             <p className="bio-text">
-              <span className="dropcap">L</span>uz Fija emerge desde las entrañas de la 
-              autopista Vespucio, fusionando shoegaze con la estética digital del 
-              nuevo milenio. Su sonido oscila entre guitarras saturadas y sintetizadores 
-              analógicos, creando atmósferas que capturan la nostalgia de los 2000 
-              con una visión futurista.
+              <span className="dropcap">L</span>uzFija es una banda Chilena formada en Santiago, comuna de La Florida, en el año 2020 por 4 amigos que coinciden en un trabajo de retail en un centro comercial de la capital. A fines de 2021 debutan con su EP homónimo, trabajo que movieron en espacios limitados y que tuvo una cálida recepción, marcado por atmósferas DreamPop y Shoegaze como también el filo y energía del Post Punk.
+Luego de un periodo de inactividad debido a la pandemia, sumado al ir y venir personal, el proyecto se reactiva en 2024 con pequeños cambios de integrantes y nuevas composiciones, con un foco sónico evolutivo respecto a su trabajo anterior.
+Es así como ‘Vespucio’ se erige como carta de presentación de este nuevo proceso, acudiendo a una sonoridad más oscura, heredera del cold wave y el rock gótico, sin abandonar el Shoegaze ni el Post Punk, elementos que siguen siendo pilares de la propuesta. 
+Actualmente la banda se encuentra trabajando en su disco debut, abarcando un espectro más amplio de influencias a las ya mencionadas, destacando los elementos electrónicos glitch tipo hyper-pop, sonoridades oscuras referenciadas de bandas  visual kei como Buck-Thick y estructuras compositivas cercanas al post-rock. 
             </p>
-            <p className="bio-text">
-              <strong>Vespucio</strong> es su primer single, un viaje sónico por las 
-              calles de Santiago cuando el sol se pone y las luces de neón comienzan 
-              a brillar. Producido por <em>Luz Fija</em> y masterizado en cinta DAT.
-            </p>
-            
+
             <div className="quotes">
-              <span className="quote">"El futuro es ahora"</span>
-              <span className="quote-author">- Rockaxis</span>
+              <span className="quote">"Vespucio"</span>
+              <span className="quote-author">- Luz Fija</span>
             </div>
           </div>
 
@@ -176,7 +177,7 @@ function App() {
               </div>
               
               <div className="track-info">
-                <span className="track-name">🎸 LUZ FIJA - VESPUCIO 🎸</span>
+                <span className="track-name"> LUZ FIJA - VESPUCIO </span>
                 <div className="progress-bar" onClick={handleProgressClick}>
                   <div 
                     className="progress" 
@@ -211,16 +212,10 @@ function App() {
       {/* FOOTER */}
       <footer className="y2k-footer">
         <div className="footer-content">
-          <div className="footer-links">
-            <a href="#">📧 CONTACT</a>
-            <a href="#">📜 PRESS KIT</a>
-            <a href="#">🎫 SHOWS</a>
-            <a href="#">💿 MERCH</a>
-          </div>
           <div className="footer-copyright">
             <span>© 2000-{new Date().getFullYear()} LUZ FIJA</span>
             <span>✧ TODOS LOS DERECHOS RESERVADOS ✧</span>
-            <span className="blink-text">★ HEcho con ♥ en SANTIAGO ★</span>
+            <span className="blink-text">★ Hecho con ♥ en La Florida ★</span>
           </div>
           <div className="footer-buttons">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31' viewBox='0 0 88 31'%3E%3Crect width='88' height='31' fill='black'/%3E%3Ctext x='5' y='20' fill='lime' font-size='10'%3ENETSCAPE%3C/text%3E%3C/svg%3E" alt="netscape" />
