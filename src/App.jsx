@@ -2,7 +2,7 @@
 import { useState, useRef } from 'react';
 import './App.css';
 import photo01 from './assets/photos/photo01.jpeg';
-import vespucioAudio from './assets/music/Vespucio.wav';
+// import vespucioAudio from './assets/music/Vespucio.wav';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
