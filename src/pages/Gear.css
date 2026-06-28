@@ -1,0 +1,195 @@
+/* GEAR PAGE */
+.gear-hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px dashed #ff66ff;
+}
+
+.gear-hero h1 {
+  font-size: 3.5rem;
+}
+
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.gear-card {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid white;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: cardPulse 2s infinite;
+}
+
+.gear-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px #ff66ff;
+  border-color: #ff66ff;
+}
+
+.gear-card-image {
+  width: 120px;
+  height: 120px;
+  border: 2px dashed #ff66ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 102, 255, 0.05);
+}
+
+.gear-card-placeholder {
+  font-size: 2.5rem;
+  opacity: 0.6;
+}
+
+.gear-card-info {
+  text-align: center;
+}
+
+.gear-card-name {
+  font-size: 1.1rem;
+  color: white;
+  margin: 0 0 0.3rem;
+  text-shadow: 0 0 10px #ff66ff;
+}
+
+.gear-card-role {
+  font-size: 0.75rem;
+  color: cyan;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.gear-card-arrow {
+  font-size: 1.2rem;
+  color: #ff66ff;
+  animation: blink 0.8s step-end infinite;
+}
+
+/* GEAR MEMBER */
+.gear-member-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px dashed #ff66ff;
+}
+
+.gear-member-title {
+  flex: 1;
+  text-align: center;
+}
+
+.gear-member-title h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.gear-member-photos {
+  margin-bottom: 2rem;
+}
+
+.gear-photo-placeholder {
+  border: 2px dashed white;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: #666;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.gear-list {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid white;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.gear-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  align-items: flex-start;
+}
+
+.gear-item:last-child {
+  border-bottom: none;
+}
+
+.gear-item-bullet {
+  color: #ff66ff;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.gear-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.gear-item-name {
+  color: white;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-shadow: 0 0 8px cyan;
+}
+
+.gear-item-desc {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.gear-error {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.gear-error h1 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
+
+.gear-error p {
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .gear-hero h1 {
+    font-size: 2rem;
+  }
+
+  .gear-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .gear-member-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .gear-member-title h1 {
+    font-size: 1.8rem;
+  }
+}

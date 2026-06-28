@@ -309,6 +309,74 @@ body::after {
 
 /* HEADER */
 
+.band-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.band-link:hover {
+  opacity: 0.9;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-btn {
+  background: black;
+  color: white;
+  border: 2px solid #ff66ff;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: monospace;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background: #ff66ff;
+  color: black;
+  box-shadow: 0 0 20px #ff66ff;
+}
+
+.nav-btn.instagram {
+  border-color: #ff66ff;
+  color: #ff66ff;
+}
+
+.nav-btn.instagram:hover {
+  background: #ff66ff;
+  color: black;
+  box-shadow: 0 0 20px #ff66ff;
+}
+
+.nav-btn.youtube {
+  border-color: red;
+  color: red;
+}
+
+.nav-btn.youtube:hover {
+  background: red;
+  color: black;
+  box-shadow: 0 0 20px red;
+}
+
+.nav-btn.spotify {
+  border-color: #1db954;
+  color: #1db954;
+}
+
+.nav-btn.spotify:hover {
+  background: #1db954;
+  color: black;
+  box-shadow: 0 0 20px #1db954;
+}
+
 .header-gif {
   width: 40px;
   height: auto;
@@ -331,15 +399,18 @@ body::after {
 }
 
 .y2k-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.85);
-  border-bottom: 3px solid white;
+  padding: 0.6rem 1.5rem;
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 2px solid white;
   margin-bottom: 2rem;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.6rem;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(5px);
 }
@@ -429,45 +500,7 @@ body::after {
   text-shadow: 0 0 10px #ff66ff;
 }
 
-.social-btn {
-  padding: 0.7rem 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  font-family: monospace;
-  border: 2px solid;
-  transition: all 0.2s;
-  display: inline-block;
-  margin-left: 1rem;
-  background: black;
-  color: white;
-}
 
-.instagram {
-  background: #ff66ff;
-  color: white;
-  border-color: white;
-  box-shadow: 0 0 15px #ff66ff;
-}
-
-.youtube {
-  background: red;
-  color: white;
-  border-color: white;
-  box-shadow: 0 0 15px red;
-}
-
-/* Botón de Spotify */
-.spotify {
-  background: #1db954; /* Verde oficial de Spotify */
-  color: white;
-  border-color: white;
-  box-shadow: 0 0 15px #1db954;
-}
-
-.social-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px white;
-}
 
 /* HERO */
 .hero {
@@ -942,8 +975,8 @@ blink {
     text-align: center;
   }
 
-  .social-buttons {
-    margin-top: 1rem;
+  .nav-links {
+    justify-content: center;
   }
 
   .footer-content {

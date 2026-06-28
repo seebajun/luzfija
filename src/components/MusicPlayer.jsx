@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import vespucioMp3 from "../assets/mp3/01 - Vespucio.mp3";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -39,7 +40,15 @@ function MusicPlayer() {
   };
 
   return (
-    <div className="player-card">
+    <>
+      <audio
+        ref={audioRef}
+        src={vespucioMp3}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
+        onEnded={() => setIsPlaying(false)}
+      />
+      <div className="player-card">
       <h3 className="section-title cyan">🎧 ESCUCHA VESPUCIO</h3>
       <div className="music-player">
         <div className="player-visualizer">
@@ -83,6 +92,7 @@ function MusicPlayer() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

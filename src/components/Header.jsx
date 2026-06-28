@@ -1,19 +1,25 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <header className="y2k-header">
       <div className="band-name">
-        <h1 className="glitch-text" data-text="LUZ FIJA">
-          LUZ FIJA
-        </h1>
+        <Link to="/" className="band-link">
+          <h1 className="glitch-text" data-text="LUZ FIJA">
+            LUZ FIJA
+          </h1>
+        </Link>
         <p className="single-title">「 VESPUCIO 」</p>
       </div>
 
-      <div className="social-buttons">
+      <nav className="nav-links">
+        <Link to="/" className="nav-btn">HOME</Link>
+        <Link to="/gear" className="nav-btn">GEAR</Link>
         <a
           href="https://www.instagram.com/luz.fija/"
           target="_blank"
           rel="noopener noreferrer"
-          className="social-btn instagram"
+          className="nav-btn instagram"
         >
           INSTAGRAM
         </a>
@@ -21,7 +27,7 @@ function Header() {
           href="https://www.youtube.com/@luzfija"
           target="_blank"
           rel="noopener noreferrer"
-          className="social-btn youtube"
+          className="nav-btn youtube"
         >
           YOUTUBE
         </a>
@@ -29,11 +35,11 @@ function Header() {
           href="https://open.spotify.com/intl-es/artist/6ZfDBdI1pxX9WDPW4ClMx9"
           target="_blank"
           rel="noopener noreferrer"
-          className="social-btn spotify"
+          className="nav-btn spotify"
         >
           SPOTIFY (🤢)
         </a>
-      </div>
+      </nav>
     </header>
   );
 }
