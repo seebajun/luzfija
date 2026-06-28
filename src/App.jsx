@@ -1,5 +1,6 @@
 import "./App.css";
 
+import GlitchPixels from "./components/GlitchPixels";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Sidebar from "./components/Sidebar";
@@ -9,7 +10,9 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="y2k-container">
+    <>
+      <GlitchPixels />
+      <div className="y2k-container">
       <Header />
 
       <Hero />
@@ -91,6 +94,7 @@ function App() {
 
       <Footer />
     </div>
+    </>
   );
 }
 
