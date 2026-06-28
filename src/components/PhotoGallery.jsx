@@ -1,4 +1,3 @@
-import photo00 from "../assets/photos/photo00.jpeg";
 import photo01 from "../assets/photos/photo01.jpeg";
 import photo02 from "../assets/photos/photo02.jpeg";
 import photo03 from "../assets/photos/photo03.jpeg";
@@ -7,7 +6,6 @@ import photo05 from "../assets/photos/photo05.jpeg";
 import photo06 from "../assets/photos/photo06.jpeg";
 
 const photos = [
-  { src: photo00, alt: "Photo 00" },
   { src: photo01, alt: "Photo 01" },
   { src: photo02, alt: "Photo 02" },
   { src: photo03, alt: "Photo 03" },

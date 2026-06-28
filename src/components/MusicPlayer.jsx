@@ -5,6 +5,7 @@ function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef(null);
 
   const togglePlay = () => {
@@ -14,6 +15,11 @@ function MusicPlayer() {
       audioRef.current.play();
     }
     setIsPlaying(!isPlaying);
+  };
+
+  const toggleMute = () => {
+    audioRef.current.muted = !audioRef.current.muted;
+    setIsMuted(!isMuted);
   };
 
   const handleTimeUpdate = () => {
@@ -72,7 +78,7 @@ function MusicPlayer() {
               {isPlaying ? "⏸" : "▶"}
             </button>
             <button className="wa-btn">⏭</button>
-            <button className="wa-btn">🔊</button>
+            <button className="wa-btn" onClick={toggleMute}>{isMuted ? "🔇" : "🔊"}</button>
           </div>
           <div className="wa-progress-wrap">
             <div className="wa-progress-bar" onClick={handleProgressClick}>
