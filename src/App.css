@@ -589,6 +589,9 @@ body::after {
 
 /* SIDEBAR */
 .sidebar {
+  position: sticky;
+  top: 5rem;
+  align-self: start;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -922,6 +925,48 @@ body::after {
   font-size: 0.7rem;
   backdrop-filter: blur(3px);
   color: white;
+}
+
+/* GALERÍA */
+.photo-gallery {
+  margin-bottom: 2rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.8rem;
+}
+
+.photo-card {
+  border: 2px solid white;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  transition: transform 0.2s;
+}
+
+.photo-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #ff66ff;
+}
+
+.photo-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.1) saturate(1.2);
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .photo-img {
+    height: 120px;
+  }
 }
 
 blink {
