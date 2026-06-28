@@ -6,6 +6,7 @@
 }
 
 body {
+  padding-bottom: 3.5rem;
   background: #ff66ff;
   background-image:
     repeating-linear-gradient(
@@ -747,57 +748,82 @@ body::after {
   right: 0;
   z-index: 200;
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.4rem 1rem;
-  background: #1a1a2e;
+  flex-direction: column;
+  padding: 0.25rem 0.6rem 0.2rem;
+  background: #2b2b2b;
   border-top: 2px solid #00ff41;
-  box-shadow: 0 -4px 20px rgba(0, 255, 65, 0.2);
-  font-family: monospace;
-  flex-wrap: wrap;
+  box-shadow: 0 -4px 20px rgba(0, 255, 65, 0.25);
+  font-family: 'Courier New', monospace;
+  gap: 0.15rem;
 }
 
-.winamp-left {
+.wa-led {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.6rem;
+  background: #0d0d0d;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
 }
 
-.winamp-equalizer {
+.wa-eq {
   display: flex;
   align-items: flex-end;
   gap: 2px;
-  height: 20px;
+  height: 14px;
 }
 
 .eq-bar {
   width: 3px;
+  height: 10px;
   background: #00ff41;
-  animation: eqWave 0.6s ease-in-out infinite alternate;
-  border-radius: 1px;
 }
 
-@keyframes eqWave {
-  0% { height: 4px; }
-  100% { height: 18px; }
+.wa-led-track {
+  flex: 1;
+  color: #00ff41;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 4px #00ff41;
 }
 
-.winamp-controls {
+.wa-led-time {
+  color: #00ff41;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  text-shadow: 0 0 4px #00ff41;
+}
+
+.wa-row {
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.4rem;
+}
+
+.wa-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex-shrink: 0;
 }
 
 .wa-btn {
-  background: #2a2a3e;
-  border: 1px solid #00ff41;
+  background: #3a3a3a;
+  border-top: 1px solid #5a5a5a;
+  border-left: 1px solid #5a5a5a;
+  border-bottom: 1px solid #1a1a1a;
+  border-right: 1px solid #1a1a1a;
   color: #00ff41;
-  font-size: 0.85rem;
-  padding: 0.2rem 0.45rem;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.35rem;
   cursor: pointer;
-  font-family: monospace;
-  transition: all 0.15s;
-  line-height: 1;
+  font-family: 'Courier New', monospace;
+  line-height: 1.2;
+  transition: all 0.1s;
 }
 
 .wa-btn:hover {
@@ -806,84 +832,85 @@ body::after {
 }
 
 .wa-btn.wa-play {
-  background: #00ff41;
   color: black;
   font-weight: bold;
 }
 
-.winamp-info {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
+.wa-btn.wa-play:not(:hover) {
+  background: #00ff41;
 }
 
-.wa-track {
-  color: #00ff41;
-  font-size: 0.7rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.winamp-progress-wrap {
+.wa-progress-wrap {
   flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-width: 120px;
+  min-width: 60px;
 }
 
 .wa-progress-bar {
-  flex: 1;
-  height: 6px;
-  background: #0a0a1a;
+  height: 8px;
+  background: #0d0d0d;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 2px;
   overflow: hidden;
-  border: 1px solid #333;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #5a5a5a;
 }
 
 .wa-progress {
   height: 100%;
   background: #00ff41;
   transition: width 0.1s linear;
-  border-radius: 3px;
-  box-shadow: 0 0 8px #00ff41;
-}
-
-.wa-time {
-  display: flex;
-  gap: 0.3rem;
-  font-size: 0.65rem;
-  color: #00ff41;
-  white-space: nowrap;
+  border-radius: 2px;
+  box-shadow: 0 0 6px #00ff41;
 }
 
 .player-card {
   display: none;
 }
 
-.time-info {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  font-family: monospace;
-  color: white;
-}
+@media (max-width: 768px) {
+  .winamp-player {
+    padding: 0.2rem 0.4rem;
+    gap: 0.1rem;
+  }
 
-.winamp-visual {
-  margin-top: 1rem;
-  text-align: center;
-  padding: 0.5rem;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px dashed white;
-  font-size: 0.8rem;
-  color: white;
-}
+  .wa-led {
+    gap: 0.3rem;
+    padding: 0.1rem 0.3rem;
+  }
 
-.equalizer {
-  display: inline-block;
-  margin-left: 0.5rem;
-  animation: blink 0.5s step-end infinite;
+  .wa-eq {
+    height: 10px;
+  }
+
+  .eq-bar {
+    width: 2px;
+    height: 7px;
+  }
+
+  .wa-led-track {
+    font-size: 0.55rem;
+  }
+
+  .wa-led-time {
+    font-size: 0.5rem;
+  }
+
+  .wa-row {
+    gap: 0.2rem;
+  }
+
+  .wa-btns {
+    gap: 0.1rem;
+  }
+
+  .wa-btn {
+    font-size: 0.6rem;
+    padding: 0.05rem 0.25rem;
+  }
+
+  .wa-progress-bar {
+    height: 6px;
+  }
 }
 
 .gif-banner {
@@ -920,7 +947,7 @@ blink {
 /* FOOTER */
 .y2k-footer {
   margin-top: 3rem;
-  padding: 2rem 1rem 1rem;
+  padding: 2rem 1rem 4rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, black 100%);
   border-top: 3px solid white;
   text-align: center;
@@ -993,5 +1020,9 @@ blink {
 
   .glitch-text {
     font-size: 2rem;
+  }
+
+  body {
+    padding-bottom: 3rem;
   }
 }

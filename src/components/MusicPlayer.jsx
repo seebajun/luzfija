@@ -51,39 +51,36 @@ function MusicPlayer() {
         onEnded={() => setIsPlaying(false)}
       />
       <div className="winamp-player">
-        <div className="winamp-left">
-          <div className="winamp-Equalizer">
-            <div className="eq-bar" style={{ animationDelay: "0s" }}></div>
-            <div className="eq-bar" style={{ animationDelay: "0.15s" }}></div>
-            <div className="eq-bar" style={{ animationDelay: "0.3s" }}></div>
-            <div className="eq-bar" style={{ animationDelay: "0.1s" }}></div>
-            <div className="eq-bar" style={{ animationDelay: "0.25s" }}></div>
+        <div className="wa-led">
+          <div className="wa-eq">
+            <div className="eq-bar"></div>
+            <div className="eq-bar"></div>
+            <div className="eq-bar"></div>
+            <div className="eq-bar"></div>
+            <div className="eq-bar"></div>
           </div>
+          <span className="wa-led-track">LUZ FIJA — VESPUCIO</span>
+          <span className="wa-led-time">
+            {formatTime(currentTime)} / {formatTime(duration)}
+          </span>
         </div>
 
-        <div className="winamp-controls">
-          <button className="wa-btn">⏮</button>
-          <button className="wa-btn wa-play" onClick={togglePlay}>
-            {isPlaying ? "⏸" : "▶"}
-          </button>
-          <button className="wa-btn">⏭</button>
-          <button className="wa-btn">🔊</button>
-        </div>
-
-        <div className="winamp-info">
-          <span className="wa-track">LUZ FIJA — VESPUCIO</span>
-        </div>
-
-        <div className="winamp-progress-wrap">
-          <div className="wa-progress-bar" onClick={handleProgressClick}>
-            <div
-              className="wa-progress"
-              style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
-            ></div>
+        <div className="wa-row">
+          <div className="wa-btns">
+            <button className="wa-btn">⏮</button>
+            <button className="wa-btn wa-play" onClick={togglePlay}>
+              {isPlaying ? "⏸" : "▶"}
+            </button>
+            <button className="wa-btn">⏭</button>
+            <button className="wa-btn">🔊</button>
           </div>
-          <div className="wa-time">
-            <span>{formatTime(currentTime)}</span>
-            <span>{formatTime(duration)}</span>
+          <div className="wa-progress-wrap">
+            <div className="wa-progress-bar" onClick={handleProgressClick}>
+              <div
+                className="wa-progress"
+                style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
+              ></div>
+            </div>
           </div>
         </div>
       </div>
