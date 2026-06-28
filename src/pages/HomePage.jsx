@@ -1,7 +1,6 @@
 import Hero from "../components/Hero";
 import Sidebar from "../components/Sidebar";
 import BioCard from "../components/BioCard";
-import MusicPlayer from "../components/MusicPlayer";
 
 function HomePage() {
   return (
@@ -71,8 +70,6 @@ function HomePage() {
             estancamiento del protagonista es validado pero con el matiz que
             no todos los días son exactamente el mismo.
           </BioCard>
-
-          <MusicPlayer />
 
           <div className="gif-banner">
             <span>⚡ BEST VIEWED WITH 1024x768 ⚡</span>

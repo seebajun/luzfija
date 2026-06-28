@@ -14,7 +14,7 @@ function Header() {
 
       <nav className="nav-links">
         <Link to="/" className="nav-btn">HOME</Link>
-        <Link to="/gear" className="nav-btn">GEAR</Link>
+        <Link to="/gear" className="nav-btn gear-nav">GEAR</Link>
         <a
           href="https://www.instagram.com/luz.fija/"
           target="_blank"
@@ -37,7 +37,7 @@ function Header() {
           rel="noopener noreferrer"
           className="nav-btn spotify"
         >
-          SPOTIFY (🤢)
+          SPOTIFY
         </a>
       </nav>
     </header>
