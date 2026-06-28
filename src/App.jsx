@@ -1,4 +1,5 @@
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import "./App.css";
 import "./pages/Gear.css";
 
@@ -8,6 +9,12 @@ import MusicPlayer from "./components/MusicPlayer";
 import Footer from "./components/Footer";
 
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <>
       <GlitchPixels />

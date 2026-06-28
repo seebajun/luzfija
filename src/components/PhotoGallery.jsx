@@ -1,3 +1,4 @@
+import { useState } from "react";
 import photo01 from "../assets/photos/photo01.jpeg";
 import photo02 from "../assets/photos/photo02.jpeg";
 import photo03 from "../assets/photos/photo03.jpeg";
@@ -15,16 +16,27 @@ const photos = [
 ];
 
 function PhotoGallery() {
+  const [lightbox, setLightbox] = useState(null);
+
   return (
     <div className="photo-gallery">
       <h3 className="section-title cyan">📷 GALERÍA</h3>
       <div className="photo-grid">
         {photos.map((photo, i) => (
-          <div key={i} className="photo-card">
+          <div key={i} className="photo-card" onClick={() => setLightbox(photo.src)}>
             <img src={photo.src} alt={photo.alt} className="photo-img" />
           </div>
         ))}
       </div>
+
+      {lightbox && (
+        <div className="lightbox" onClick={() => setLightbox(null)}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={() => setLightbox(null)}>✕</button>
+            <img src={lightbox} alt="Foto ampliada" className="lightbox-img" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
