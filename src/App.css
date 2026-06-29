@@ -367,6 +367,17 @@ body::after {
   box-shadow: 0 0 20px red;
 }
 
+.nav-btn.home-nav {
+  border-color: yellow;
+  color: yellow;
+}
+
+.nav-btn.home-nav:hover {
+  background: yellow;
+  color: black;
+  box-shadow: 0 0 20px yellow;
+}
+
 .nav-btn.gear-nav {
   border-color: cyan;
   color: cyan;
@@ -425,6 +436,45 @@ body::after {
   gap: 0.6rem;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(5px);
+  transition: padding 0.35s, gap 0.35s;
+}
+
+.y2k-header.scrolled {
+  padding: 0.2rem 1rem;
+  gap: 0.3rem;
+  border-bottom-width: 1px;
+}
+
+.y2k-header.scrolled .band-name h1,
+.y2k-header.scrolled .glitch-text {
+  font-size: 1.2rem;
+}
+
+.y2k-header.scrolled .single-title {
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.y2k-header.scrolled .nav-btn {
+  font-size: 0.5rem;
+  padding: 0.1rem 0.3rem;
+  border-width: 1px;
+}
+
+.y2k-header.scrolled .nav-links {
+  gap: 0.25rem;
+}
+
+.band-name {
+  display: block;
+}
+
+.y2k-header.scrolled .band-name {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
 .band-name h1 {
@@ -508,7 +558,7 @@ body::after {
   font-size: 0.9rem;
   color: white;
   letter-spacing: 3px;
-  margin-top: -0.5rem;
+  margin-top: 0.4rem;
   text-shadow: 0 0 10px #ff66ff;
 }
 
@@ -583,18 +633,24 @@ body::after {
 .main-layout {
   display: grid;
   grid-template-columns: 300px 1fr;
+  grid-template-areas: "sidebar main";
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 2rem 0 0.5rem 0;
 }
 
 /* SIDEBAR */
 .sidebar {
+  grid-area: sidebar;
   position: sticky;
   top: 5rem;
   align-self: start;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.main-content {
+  grid-area: main;
 }
 
 .news-card {
@@ -697,7 +753,7 @@ body::after {
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .bio-card,
@@ -941,7 +997,6 @@ body::after {
   background: rgba(0, 0, 0, 0.85);
   border: 2px solid white;
   padding: 1.5rem;
-  margin-bottom: 2rem;
   backdrop-filter: blur(5px);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
@@ -985,7 +1040,7 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.97);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -1068,20 +1123,19 @@ blink {
 
 /* FOOTER */
 .y2k-footer {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem 3.5rem;
+  padding: 0.05rem 0.6rem 3.5rem;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, black 100%);
   border-top: 3px solid white;
   text-align: center;
   backdrop-filter: blur(5px);
+  line-height: 1;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0;
 }
 
 .footer-links a {
@@ -1099,10 +1153,11 @@ blink {
 
 .footer-copyright {
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.5rem;
+  line-height: 1;
   color: white;
-  margin: 0 auto; /* Esto centra el elemento si es un bloque */
-  flex: 1; /* Esto hace que ocupe el espacio disponible y se centre */
+  margin: 0 auto;
+  flex: 1;
 }
 
 .blink-text {
@@ -1120,11 +1175,22 @@ blink {
 @media (max-width: 768px) {
   .main-layout {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "sidebar";
+  }
+
+  .sidebar {
+    position: static;
   }
 
   .y2k-header {
     flex-direction: column;
     text-align: center;
+  }
+
+  .band-name {
+    justify-content: center;
   }
 
   .nav-links {
@@ -1142,6 +1208,36 @@ blink {
 
   .glitch-text {
     font-size: 2rem;
+  }
+
+  .nav-btn {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .lightbox {
+    padding: 0.5rem;
+  }
+
+  .lightbox-close {
+    top: -2rem;
+    right: 0.25rem;
+    font-size: 1rem;
+  }
+
+  .lightbox-img {
+    max-height: 80vh;
+  }
+
+  .y2k-header.scrolled .band-name h1,
+  .y2k-header.scrolled .glitch-text {
+    font-size: 1rem;
+  }
+
+  .y2k-header.scrolled .single-title {
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+    margin: 0;
   }
 
   body {

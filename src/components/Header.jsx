@@ -1,8 +1,17 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="y2k-header">
+    <header className={`y2k-header${scrolled ? " scrolled" : ""}`}>
       <div className="band-name">
         <Link to="/" className="band-link">
           <h1 className="glitch-text" data-text="LUZ FIJA">
@@ -13,7 +22,7 @@ function Header() {
       </div>
 
       <nav className="nav-links">
-        <Link to="/" className="nav-btn">HOME</Link>
+        <Link to="/" className="nav-btn home-nav">HOME</Link>
         <Link to="/gear" className="nav-btn gear-nav">GEAR</Link>
         <a
           href="https://www.instagram.com/luz.fija/"
@@ -21,7 +30,7 @@ function Header() {
           rel="noopener noreferrer"
           className="nav-btn instagram"
         >
-          INSTAGRAM
+          INSTA
         </a>
         <a
           href="https://www.youtube.com/@luzfija"
@@ -29,7 +38,7 @@ function Header() {
           rel="noopener noreferrer"
           className="nav-btn youtube"
         >
-          YOUTUBE
+          YT
         </a>
         <a
           href="https://open.spotify.com/intl-es/artist/6ZfDBdI1pxX9WDPW4ClMx9"
@@ -37,7 +46,7 @@ function Header() {
           rel="noopener noreferrer"
           className="nav-btn spotify"
         >
-          SPOTIFY
+          SPF
         </a>
       </nav>
     </header>

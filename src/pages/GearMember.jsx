@@ -7,9 +7,7 @@ const gearData = {
     categories: [
       {
         title: "Guitarra",
-        items: [
-          { gear: "Fender Jaguar Johnny Marr" },
-        ],
+        items: [{ gear: "Fender Jaguar Johnny Marr" }],
       },
       {
         title: "Pedales Guitarra",
@@ -31,9 +29,7 @@ const gearData = {
       },
       {
         title: "Sintetizadores",
-        items: [
-          { gear: "Behringer JT 4000" },
-        ],
+        items: [{ gear: "Behringer JT 4000" }],
       },
       {
         title: "Pedales Sintetizadores",
@@ -45,9 +41,7 @@ const gearData = {
       },
       {
         title: "Secuenciador / Sampler",
-        items: [
-          { gear: "Akai MPC One" },
-        ],
+        items: [{ gear: "Akai MPC One" }],
       },
     ],
   },
@@ -82,15 +76,14 @@ const gearData = {
     categories: [
       {
         title: "Guitarra",
-        items: [
-          { gear: "G&L Legacy Special USA 93'" },
-        ],
+        items: [{ gear: "G&L Legacy Special USA 93'" }],
       },
       {
         title: "Pedales Guitarra",
         items: [
           { gear: "ISP Technologies Decimator II G-String" },
           { gear: "Boss ES-8" },
+          { gear: "TC Electonic Polytune V1" },
           { gear: "Walrus Audio Deep Six" },
           { gear: "Electro Harmonix POG2" },
           { gear: "JHS Morning Glory V4" },
@@ -115,9 +108,7 @@ const gearData = {
     categories: [
       {
         title: "Bajo",
-        items: [
-          { gear: "Squier PJB" },
-        ],
+        items: [{ gear: "Squier PJB" }],
       },
       {
         title: "Pedales Bajo",
@@ -137,15 +128,11 @@ const gearData = {
     categories: [
       {
         title: "Mezcladora",
-        items: [
-          { gear: "Behringer X AIR XR18 (Formato Rack)" },
-        ],
+        items: [{ gear: "Behringer X AIR XR18 (Formato Rack)" }],
       },
       {
         title: "Monitoreo Inalámbrico",
-        items: [
-          { gear: "Bolanle P2 IEM Amplificador de Audífonos personal" },
-        ],
+        items: [{ gear: "Bolanle P2 IEM Amplificador de Audífonos personal" }],
       },
     ],
   },
