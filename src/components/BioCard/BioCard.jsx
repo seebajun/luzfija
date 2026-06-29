@@ -1,3 +1,5 @@
+import "./BioCard.css";
+
 function BioCard({ title, dropcapLetter, children }) {
   return (
     <div className="bio-card">

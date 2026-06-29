@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
-import vespucioMp3 from "../assets/mp3/01 - Vespucio.mp3";
+import vespucioMp3 from "../../assets/mp3/01 - Vespucio.mp3";
+import "./MusicPlayer.css";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);

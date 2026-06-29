@@ -1,7 +1,8 @@
-import Hero from "../components/Hero";
-import Sidebar from "../components/Sidebar";
-import BioCard from "../components/BioCard";
-import PhotoGallery from "../components/PhotoGallery";
+import Hero from "../components/Hero/Hero";
+import Sidebar from "../components/Sidebar/Sidebar";
+import BioCard from "../components/BioCard/BioCard";
+import PhotoGallery from "../components/PhotoGallery/PhotoGallery";
+import "./HomePage.css";
 
 function HomePage() {
   return (

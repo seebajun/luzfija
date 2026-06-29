@@ -1,4 +1,13 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import { useParams, useNavigate } from "react-router-dom";
+import "./Gear.css";
+import photoAriel from "../assets/photos_gear/photo_ariel_gear.jpeg";
+import photoAriel2 from "../assets/photos_gear/photo_ariel_gear_others.jpeg";
+import photoGonzalo from "../assets/photos_gear/photo_gonzalo_gear.jpeg";
+import photoGuillermo from "../assets/photos_gear/photo_guillermo_gear.jpeg";
+import photoGuillermoBag from "../assets/photos_gear/photo_guillermo_gear_bag.jpeg";
+import photoGuillermoStrap from "../assets/photos_gear/photo_guillermo_gear_strap.jpeg";
 
 const gearData = {
   ariel: {
@@ -142,6 +151,53 @@ function GearMember() {
   const { member } = useParams();
   const navigate = useNavigate();
   const data = gearData[member];
+  const [lightbox, setLightbox] = useState(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  const memberPhotos = {
+    ariel: [photoAriel, photoAriel2],
+    gonzalo: [photoGonzalo],
+    guillermo: [photoGuillermo, photoGuillermoBag, photoGuillermoStrap],
+  };
+
+  function renderPhotos() {
+    const photos = memberPhotos[member];
+    if (!photos) {
+      return (
+        <div className="gear-photo-placeholder">
+          <span>📸 FOTO DEL MIEMBRO</span>
+        </div>
+      );
+    }
+    if (photos.length === 1) {
+      return (
+        <img src={photos[0]} alt={data.name} className="gear-photo" onClick={() => setLightbox(photos[0])} />
+      );
+    }
+    return (
+      <div className="gear-carousel">
+        {photos.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`${data.name} ${i + 1}`}
+            className="gear-photo"
+            style={{ display: i === carouselIndex ? "block" : "none" }}
+            onClick={() => setLightbox(src)}
+          />
+        ))}
+        <div className="gear-carousel-controls">
+          <button className="gear-carousel-btn" onClick={() => setCarouselIndex((prev) => (prev === 0 ? photos.length - 1 : prev - 1))}>‹</button>
+          <span className="gear-carousel-dots">
+            {photos.map((_, i) => (
+              <span key={i} className={`gear-carousel-dot${i === carouselIndex ? " active" : ""}`} onClick={() => setCarouselIndex(i)} />
+            ))}
+          </span>
+          <button className="gear-carousel-btn" onClick={() => setCarouselIndex((prev) => (prev === photos.length - 1 ? 0 : prev + 1))}>›</button>
+        </div>
+      </div>
+    );
+  }
 
   if (!data) {
     return (
@@ -151,8 +207,8 @@ function GearMember() {
             404
           </h1>
           <p>MIEMBRO NO ENCONTRADO</p>
-          <button className="control-btn" onClick={() => navigate("/gear")}>
-            ← VOLVER A GEAR
+          <button className="nav-btn gear-nav" onClick={() => navigate("/gear")}>
+            ← GEAR
           </button>
         </div>
       </div>
@@ -162,7 +218,7 @@ function GearMember() {
   return (
     <div className="y2k-container">
       <div className="gear-member-header">
-        <button className="control-btn" onClick={() => navigate("/gear")}>
+        <button className="nav-btn gear-nav" onClick={() => navigate("/gear")}>
           ← GEAR
         </button>
         <div className="gear-member-title">
@@ -174,10 +230,18 @@ function GearMember() {
       </div>
 
       <div className="gear-member-photos">
-        <div className="gear-photo-placeholder">
-          <span>📸 FOTO DEL MIEMBRO</span>
-        </div>
+        {renderPhotos()}
       </div>
+
+      {lightbox && createPortal(
+        <div className="lightbox" onClick={() => setLightbox(null)}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={() => setLightbox(null)}>✕</button>
+            <img src={lightbox} alt="Foto ampliada" className="lightbox-img" />
+          </div>
+        </div>,
+        document.body
+      )}
 
       {data.categories.map((cat, i) => (
         <div key={i} className="gear-list">

@@ -1,0 +1,180 @@
+.winamp-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem 0.6rem 0.2rem;
+  background: #2b2b2b;
+  border-top: 2px solid #00ff41;
+  box-shadow: 0 -4px 20px rgba(0, 255, 65, 0.25);
+  font-family: 'Courier New', monospace;
+  gap: 0.15rem;
+}
+
+.wa-led {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #0d0d0d;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+}
+
+.wa-eq {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+}
+
+.eq-bar {
+  width: 3px;
+  height: 10px;
+  background: #00ff41;
+}
+
+.wa-led-track {
+  flex: 1;
+  color: #00ff41;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 4px #00ff41;
+}
+
+.wa-led-time {
+  color: #00ff41;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  text-shadow: 0 0 4px #00ff41;
+}
+
+.wa-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.wa-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex-shrink: 0;
+}
+
+.wa-btn {
+  background: #3a3a3a;
+  border-top: 1px solid #5a5a5a;
+  border-left: 1px solid #5a5a5a;
+  border-bottom: 1px solid #1a1a1a;
+  border-right: 1px solid #1a1a1a;
+  color: #00ff41;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.35rem;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  line-height: 1.2;
+  transition: all 0.1s;
+}
+
+.wa-btn:hover {
+  background: #00ff41;
+  color: black;
+}
+
+.wa-btn.wa-play {
+  color: black;
+  font-weight: bold;
+}
+
+.wa-btn.wa-play:not(:hover) {
+  background: #00ff41;
+}
+
+.wa-volume-slider {
+  width: 60px;
+  height: 4px;
+  accent-color: #00ff41;
+  background: #0d0d0d;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.wa-progress-wrap {
+  flex: 1;
+  min-width: 60px;
+}
+
+.wa-progress-bar {
+  height: 8px;
+  background: #0d0d0d;
+  cursor: pointer;
+  border-radius: 2px;
+  overflow: hidden;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #5a5a5a;
+}
+
+.wa-progress {
+  height: 100%;
+  background: #00ff41;
+  transition: width 0.1s linear;
+  border-radius: 2px;
+  box-shadow: 0 0 6px #00ff41;
+}
+
+.player-card {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .winamp-player {
+    padding: 0.2rem 0.4rem;
+    gap: 0.1rem;
+  }
+
+  .wa-led {
+    gap: 0.3rem;
+    padding: 0.1rem 0.3rem;
+  }
+
+  .wa-eq {
+    height: 10px;
+  }
+
+  .eq-bar {
+    width: 2px;
+    height: 7px;
+  }
+
+  .wa-led-track {
+    font-size: 0.55rem;
+  }
+
+  .wa-led-time {
+    font-size: 0.5rem;
+  }
+
+  .wa-row {
+    gap: 0.2rem;
+  }
+
+  .wa-btns {
+    gap: 0.1rem;
+  }
+
+  .wa-btn {
+    font-size: 0.6rem;
+    padding: 0.05rem 0.25rem;
+  }
+
+  .wa-progress-bar {
+    height: 6px;
+  }
+}

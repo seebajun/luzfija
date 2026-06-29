@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import photo01 from "../assets/photos/photo01.jpeg";
-import photo02 from "../assets/photos/photo02.jpeg";
-import photo03 from "../assets/photos/photo03.jpeg";
-import photo04 from "../assets/photos/photo04.jpeg";
-import photo05 from "../assets/photos/photo05.jpeg";
-import photo06 from "../assets/photos/photo06.jpeg";
+import photo01 from "../../assets/photos/photo01.jpeg";
+import photo02 from "../../assets/photos/photo02.jpeg";
+import photo03 from "../../assets/photos/photo03.jpeg";
+import photo04 from "../../assets/photos/photo04.jpeg";
+import photo05 from "../../assets/photos/photo05.jpeg";
+import photo06 from "../../assets/photos/photo06.jpeg";
+import "./PhotoGallery.css";
 
 const photos = [
   { src: photo01, alt: "Photo 01" },

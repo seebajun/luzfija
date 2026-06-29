@@ -1,3 +1,5 @@
+import "./GlitchPixels.css";
+
 function GlitchPixels() {
   return (
     <div className="glitch-pixels">

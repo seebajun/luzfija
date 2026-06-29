@@ -113,6 +113,69 @@
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
+.gear-photo {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.gear-carousel {
+  position: relative;
+}
+
+.gear-carousel .gear-photo {
+  display: block;
+}
+
+.gear-carousel-btn {
+  background: black;
+  color: cyan;
+  border: 2px solid cyan;
+  font-size: 1rem;
+  padding: 0.3rem 0.7rem;
+  font-weight: bold;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gear-carousel-btn:hover {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 20px cyan;
+}
+
+.gear-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.gear-carousel-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gear-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.gear-carousel-dot.active {
+  background: #ff66ff;
+  border-color: #ff66ff;
+}
+
 .gear-list {
   background: rgba(0, 0, 0, 0.85);
   border: 2px solid white;
@@ -191,5 +254,9 @@
 
   .gear-member-title h1 {
     font-size: 1.8rem;
+  }
+
+  .gear-photo {
+    height: 250px;
   }
 }

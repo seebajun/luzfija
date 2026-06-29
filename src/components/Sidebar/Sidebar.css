@@ -1,0 +1,85 @@
+.sidebar {
+  grid-area: sidebar;
+  position: sticky;
+  top: 5rem;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.news-card {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid white;
+  padding: 1.2rem;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: cardPulse 2s infinite;
+}
+
+@keyframes cardPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 102, 255, 0.4);
+  }
+}
+
+.news-item {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-left: 3px solid #ff66ff;
+}
+
+.news-date {
+  color: #ff66ff;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.construction-box {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background: black;
+  border: 2px dotted white;
+  text-align: center;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.y2k-marquee-small {
+  display: block;
+  margin-top: 0.5rem;
+  color: #ff66ff;
+  font-weight: bold;
+}
+
+.counter {
+  text-align: center;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.counter-bars {
+  color: #ff66ff;
+  letter-spacing: 2px;
+}
+
+.discography {
+  list-style: none;
+  color: white;
+}
+
+.discography li {
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+  }
+}

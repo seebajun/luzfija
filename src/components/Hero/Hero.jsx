@@ -1,4 +1,5 @@
-import photo06 from "../assets/photos/photo06.jpeg";
+import photo06 from "../../assets/photos/photo06.jpeg";
+import "./Hero.css";
 
 function Hero() {
   return (

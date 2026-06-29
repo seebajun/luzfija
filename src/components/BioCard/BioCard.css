@@ -1,0 +1,42 @@
+.bio-card,
+.player-card {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid white;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.bio-text {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.dropcap {
+  font-size: 3rem;
+  float: left;
+  margin-right: 0.5rem;
+  color: #ff66ff;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff66ff;
+}
+
+.quotes {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-top: 1px dashed white;
+  text-align: center;
+}
+
+.quote {
+  font-style: italic;
+  color: #ff66ff;
+}
+
+.quote-author {
+  font-size: 0.8rem;
+  display: block;
+  color: white;
+}

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./Gear.css";
 
 const members = [
   { slug: "ariel", name: "Ariel", role: "Voz / Guitarra / Sintes / Secuencias" },
