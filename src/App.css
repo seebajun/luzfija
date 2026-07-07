@@ -101,6 +101,8 @@ body::after {
   border: 2px solid #ff66ff;
   font-size: 0.8rem;
   padding: 0.4rem 0.8rem;
+  min-width: 4.5rem;
+  text-align: center;
   font-weight: bold;
   text-decoration: none;
   font-family: monospace;
@@ -167,6 +169,17 @@ body::after {
   background: #1db954;
   color: black;
   box-shadow: 0 0 20px #1db954;
+}
+
+.nav-btn.info-nav {
+  border-color: white;
+  color: white;
+}
+
+.nav-btn.info-nav:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 0 20px white;
 }
 
 /* GLITCH TEXT — compartido entre Header y GearPage */
@@ -283,6 +296,7 @@ blink {
   .nav-btn {
     font-size: 0.65rem;
     padding: 0.25rem 0.5rem;
+    min-width: 3rem;
   }
 
   body {

@@ -72,6 +72,7 @@
 .y2k-header.scrolled .nav-btn {
   font-size: 0.5rem;
   padding: 0.1rem 0.3rem;
+  min-width: 2.5rem;
   border-width: 1px;
 }
 
