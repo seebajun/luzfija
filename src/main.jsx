@@ -9,7 +9,7 @@ import GearMember from './pages/GearMember.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/luzfija">
+    <BrowserRouter>
       <Routes>
         <Route element={<App />}>
           <Route index element={<HomePage />} />

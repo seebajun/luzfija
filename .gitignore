@@ -23,3 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 *.wav"
+cloudfrontfreeplan.txt
+
+# Credenciales AWS
+set-env.ps1
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate*
+terraform/terraform.tfvars

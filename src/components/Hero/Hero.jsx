@@ -1,4 +1,4 @@
-import photo06 from "../../assets/photos/photo06.jpeg";
+import photo06 from "../../assets/photos/photo06.webp";
 import "./Hero.css";
 
 function Hero() {

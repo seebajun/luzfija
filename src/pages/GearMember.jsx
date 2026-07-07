@@ -2,12 +2,17 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import "./Gear.css";
-import photoAriel from "../assets/photos_gear/photo_ariel_gear.jpeg";
-import photoAriel2 from "../assets/photos_gear/photo_ariel_gear_others.jpeg";
-import photoGonzalo from "../assets/photos_gear/photo_gonzalo_gear.jpeg";
-import photoGuillermo from "../assets/photos_gear/photo_guillermo_gear.jpeg";
-import photoGuillermoBag from "../assets/photos_gear/photo_guillermo_gear_bag.jpeg";
-import photoGuillermoStrap from "../assets/photos_gear/photo_guillermo_gear_strap.jpeg";
+import photoAriel from "../assets/photos_gear/photo_ariel_gear.webp";
+import photoAriel2 from "../assets/photos_gear/photo_ariel_gear_others.webp";
+import photoGonzalo01 from "../assets/photos_gear/photo_gonzalo_gear01.webp";
+import photoGonzalo02 from "../assets/photos_gear/photo_gonzalo_gear02.webp";
+import photoGonzalo03 from "../assets/photos_gear/photo_gonzalo_gear03.webp";
+import photoGuillermo from "../assets/photos_gear/photo_guillermo_gear.webp";
+import photoGuillermoBag from "../assets/photos_gear/photo_guillermo_gear_bag.webp";
+import photoGuillermoStrap from "../assets/photos_gear/photo_guillermo_gear_strap.webp";
+import photoAlejandro from "../assets/photos_gear/photo_alejandro_gear_pedales.webp";
+import photoMonitoreo from "../assets/photos_gear/photo_gear_monitoreo.webp";
+import photoMonitoreo02 from "../assets/photos_gear/photo_gear_monitoreo02.webp";
 
 const gearData = {
   ariel: {
@@ -156,8 +161,10 @@ function GearMember() {
 
   const memberPhotos = {
     ariel: [photoAriel, photoAriel2],
-    gonzalo: [photoGonzalo],
+    gonzalo: [photoGonzalo01, photoGonzalo02, photoGonzalo03],
     guillermo: [photoGuillermo, photoGuillermoBag, photoGuillermoStrap],
+    alejandro: [photoAlejandro],
+    monitoreo: [photoMonitoreo, photoMonitoreo02],
   };
 
   function renderPhotos() {

@@ -89,7 +89,7 @@ body::after {
 .y2k-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 1rem 1rem;
+  padding: 1rem;
   position: relative;
   z-index: 1;
 }
