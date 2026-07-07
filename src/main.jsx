@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
-import HomePage from './pages/HomePage.jsx'
-import GearPage from './pages/GearPage.jsx'
-import GearMember from './pages/GearMember.jsx'
-import InfoPage from './pages/InfoPage.jsx'
+import HomePage from './pages/Home/HomePage.jsx'
+import GearPage from './pages/Gear/GearPage.jsx'
+import GearMember from './pages/Gear/GearMember.jsx'
+import InfoPage from './pages/Info/InfoPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

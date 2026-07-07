@@ -2,17 +2,17 @@ import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import "./Gear.css";
-import photoAriel from "../assets/photos_gear/photo_ariel_gear.webp";
-import photoAriel2 from "../assets/photos_gear/photo_ariel_gear_others.webp";
-import photoGonzalo01 from "../assets/photos_gear/photo_gonzalo_gear01.webp";
-import photoGonzalo02 from "../assets/photos_gear/photo_gonzalo_gear02.webp";
-import photoGonzalo03 from "../assets/photos_gear/photo_gonzalo_gear03.webp";
-import photoGuillermo from "../assets/photos_gear/photo_guillermo_gear.webp";
-import photoGuillermoBag from "../assets/photos_gear/photo_guillermo_gear_bag.webp";
-import photoGuillermoStrap from "../assets/photos_gear/photo_guillermo_gear_strap.webp";
-import photoAlejandro from "../assets/photos_gear/photo_alejandro_gear_pedales.webp";
-import photoMonitoreo from "../assets/photos_gear/photo_gear_monitoreo.webp";
-import photoMonitoreo02 from "../assets/photos_gear/photo_gear_monitoreo02.webp";
+import photoAriel from "../../assets/photos_gear/photo_ariel_gear.webp";
+import photoAriel2 from "../../assets/photos_gear/photo_ariel_gear_others.webp";
+import photoGonzalo01 from "../../assets/photos_gear/photo_gonzalo_gear01.webp";
+import photoGonzalo02 from "../../assets/photos_gear/photo_gonzalo_gear02.webp";
+import photoGonzalo03 from "../../assets/photos_gear/photo_gonzalo_gear03.webp";
+import photoGuillermo from "../../assets/photos_gear/photo_guillermo_gear.webp";
+import photoGuillermoBag from "../../assets/photos_gear/photo_guillermo_gear_bag.webp";
+import photoGuillermoStrap from "../../assets/photos_gear/photo_guillermo_gear_strap.webp";
+import photoAlejandro from "../../assets/photos_gear/photo_alejandro_gear_pedales.webp";
+import photoMonitoreo from "../../assets/photos_gear/photo_gear_monitoreo.webp";
+import photoMonitoreo02 from "../../assets/photos_gear/photo_gear_monitoreo02.webp";
 
 const gearData = {
   ariel: {
