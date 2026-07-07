@@ -9,13 +9,13 @@ import GearMember from './pages/GearMember.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/luzfija">
       <Routes>
         <Route element={<App />}>
           <Route index element={<HomePage />} />
           <Route path="gear" element={<GearPage />} />
           <Route path="gear/:member" element={<GearMember />} />
-          <Route path="*" element={<Navigate to="/luzfija/" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>
