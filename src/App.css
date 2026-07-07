@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+}
+
 body {
   padding-bottom: 3.5rem;
   background: #ff66ff;

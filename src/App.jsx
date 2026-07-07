@@ -15,13 +15,15 @@ function App() {
   }, [pathname]);
 
   return (
-    <>
+    <div className="app-layout">
       <GlitchPixels />
       <Header />
-      <Outlet />
+      <main className="app-main">
+        <Outlet />
+      </main>
       <MusicPlayer />
       <Footer />
-    </>
+    </div>
   );
 }
 
