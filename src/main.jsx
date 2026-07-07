@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
           <Route index element={<HomePage />} />
           <Route path="gear" element={<GearPage />} />
           <Route path="gear/:member" element={<GearMember />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/luzfija/" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>
