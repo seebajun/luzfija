@@ -1,0 +1,15 @@
+.contacto-link {
+  color: #ff66ff;
+  text-decoration: underline;
+}
+
+.contacto-link:hover {
+  color: white;
+  text-shadow: 0 0 10px #ff66ff;
+}
+
+.contacto-email {
+  font-size: 1.2rem;
+  color: #00ff41;
+  text-shadow: 0 0 10px #00ff41;
+}

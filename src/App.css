@@ -41,9 +41,15 @@ body {
 }
 
 @keyframes staticNoise {
-  0% { background-color: #eecaed; }
-  50% { background-color: #f5b6f7; }
-  100% { background-color: #f7cff3; }
+  0% {
+    background-color: #eecaed;
+  }
+  50% {
+    background-color: #f5b6f7;
+  }
+  100% {
+    background-color: #f7cff3;
+  }
 }
 
 body::before {
@@ -67,9 +73,15 @@ body::before {
 }
 
 @keyframes rgbShift {
-  0% { opacity: 0.2; }
-  50% { opacity: 0.4; }
-  100% { opacity: 0.2; }
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
 
 body::after {
@@ -92,8 +104,12 @@ body::after {
 }
 
 @keyframes scanlines {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(4px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
 }
 
 .y2k-container {
@@ -134,8 +150,8 @@ body::after {
   color: white;
   border: 2px solid #ff66ff;
   font-size: 0.8rem;
-  padding: 0.4rem 0.8rem;
-  min-width: 4.5rem;
+  padding: 0.4rem 0.2rem;
+  min-width: 2.5rem;
   text-align: center;
   font-weight: bold;
   text-decoration: none;
@@ -256,18 +272,37 @@ body::after {
 }
 
 @keyframes glitch-1 {
-  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
-  50% { clip-path: inset(20% 0 30% 0); transform: translate(-3px, 2px); }
+  0%,
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  50% {
+    clip-path: inset(20% 0 30% 0);
+    transform: translate(-3px, 2px);
+  }
 }
 
 @keyframes glitch-2 {
-  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
-  50% { clip-path: inset(60% 0 10% 0); transform: translate(3px, -2px); }
+  0%,
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  50% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(3px, -2px);
+  }
 }
 
 @keyframes glitch-skew {
-  0%, 100% { transform: skew(0deg) rotateX(0deg); }
-  50% { transform: skew(2deg) rotateX(5deg); }
+  0%,
+  100% {
+    transform: skew(0deg) rotateX(0deg);
+  }
+  50% {
+    transform: skew(2deg) rotateX(5deg);
+  }
 }
 
 .single-title {
@@ -313,12 +348,19 @@ blink {
 }
 
 @keyframes blinker {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* RESPONSIVE — overrides globales compartidos */

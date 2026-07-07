@@ -7,7 +7,6 @@ function MusicPlayer() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(0.7);
-  const [showVol, setShowVol] = useState(false);
   const audioRef = useRef(null);
 
   const togglePlay = () => {
@@ -24,10 +23,6 @@ function MusicPlayer() {
     setVolume(val);
     audioRef.current.volume = val;
     if (val > 0) audioRef.current.muted = false;
-  };
-
-  const toggleVolPanel = () => {
-    setShowVol(!showVol);
   };
 
   const handleTimeUpdate = () => {
@@ -86,20 +81,16 @@ function MusicPlayer() {
               {isPlaying ? "⏸" : "▶"}
             </button>
             <button className="wa-btn">⏭</button>
-            <button className="wa-btn" onClick={toggleVolPanel}>
-              {volume === 0 ? "🔇" : "🔊"}
-            </button>
-            {showVol && (
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.05"
-                value={volume}
-                onChange={handleVolChange}
-                className="wa-volume-slider"
-              />
-            )}
+            <span className="wa-vol-icon">{volume === 0 ? "🔇" : "🔊"}</span>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value={volume}
+              onChange={handleVolChange}
+              className="wa-volume-slider"
+            />
           </div>
           <div className="wa-progress-wrap">
             <div className="wa-progress-bar" onClick={handleProgressClick}>

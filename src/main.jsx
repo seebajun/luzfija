@@ -6,7 +6,7 @@ import App from './App.jsx'
 import HomePage from './pages/Home/HomePage.jsx'
 import GearPage from './pages/Gear/GearPage.jsx'
 import GearMember from './pages/Gear/GearMember.jsx'
-import InfoPage from './pages/Info/InfoPage.jsx'
+import ContactoPage from './pages/Contacto/ContactoPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')).render(
           <Route index element={<HomePage />} />
           <Route path="gear" element={<GearPage />} />
           <Route path="gear/:member" element={<GearMember />} />
-          <Route path="info" element={<InfoPage />} />
+          <Route path="contacto" element={<ContactoPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

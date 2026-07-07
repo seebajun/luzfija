@@ -1,11 +1,11 @@
-import "./InfoPage.css";
+import "./ContactoPage.css";
 
-function InfoPage() {
+function ContactoPage() {
   return (
     <div className="y2k-container">
       <section className="hero">
-        <h1 className="glitch-text" data-text="INFO">
-          INFO
+        <h1 className="glitch-text" data-text="CONTACTO">
+          CONTACTO
         </h1>
         <p className="single-title">「 LUZ FIJA 」</p>
       </section>
@@ -25,15 +25,16 @@ function InfoPage() {
 
         <main className="main-content">
           <div className="bio-card">
-            <h2 className="section-title magenta">BIOGRAFÍA</h2>
+            <h2 className="section-title magenta">CONTACTO</h2>
             <p>
-              Luz Fija es una banda chilena formada en Santiago, comuna de La Florida, en el año 2020.
-              Su sonido fusiona rock, sintetizadores y texturas electrónicas, creando una atmósfera
-              única que han denominado como "rock sintético".
+              Para contactar a la banda, escribir a través de Instagram{" "}
+              <a href="https://www.instagram.com/luz.fija/" target="_blank" rel="noopener noreferrer" className="contacto-link">
+                @luz.fija
+              </a>
+              {" "}o por correo electrónico.
             </p>
-            <p>
-              Su primer EP homónimo fue lanzado de forma independiente, seguido por el single
-              "Vespucio" que marcó una evolución en su propuesta sonora.
+            <p className="contacto-email">
+              📧 contacto@luzfija.cl
             </p>
           </div>
         </main>
@@ -42,4 +43,4 @@ function InfoPage() {
   );
 }
 
-export default InfoPage;
+export default ContactoPage;
