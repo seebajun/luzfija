@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import "./Gear.css";
@@ -156,7 +156,7 @@ function GearMember() {
   const { member } = useParams();
   const navigate = useNavigate();
   const data = gearData[member];
-  const [lightbox, setLightbox] = useState(null);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
 
   const memberPhotos = {
@@ -166,6 +166,19 @@ function GearMember() {
     alejandro: [photoAlejandro],
     monitoreo: [photoMonitoreo, photoMonitoreo02],
   };
+
+  const photos = memberPhotos[member] || [];
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") setLightboxIndex(null);
+      if (e.key === "ArrowLeft") setLightboxIndex((p) => (p === 0 ? photos.length - 1 : p - 1));
+      if (e.key === "ArrowRight") setLightboxIndex((p) => (p === photos.length - 1 ? 0 : p + 1));
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxIndex, photos.length]);
 
   function renderPhotos() {
     const photos = memberPhotos[member];
@@ -178,7 +191,7 @@ function GearMember() {
     }
     if (photos.length === 1) {
       return (
-        <img src={photos[0]} alt={data.name} className="gear-photo" onClick={() => setLightbox(photos[0])} />
+        <img src={photos[0]} alt={data.name} className="gear-photo" onClick={() => setLightboxIndex(0)} />
       );
     }
     return (
@@ -190,7 +203,7 @@ function GearMember() {
             alt={`${data.name} ${i + 1}`}
             className="gear-photo"
             style={{ display: i === carouselIndex ? "block" : "none" }}
-            onClick={() => setLightbox(src)}
+            onClick={() => { setCarouselIndex(i); setLightboxIndex(i); }}
           />
         ))}
         <div className="gear-carousel-controls">
@@ -240,11 +253,20 @@ function GearMember() {
         {renderPhotos()}
       </div>
 
-      {lightbox && createPortal(
-        <div className="lightbox" onClick={() => setLightbox(null)}>
+      {lightboxIndex !== null && createPortal(
+        <div className="lightbox" onClick={() => setLightboxIndex(null)}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button className="lightbox-close" onClick={() => setLightbox(null)}>✕</button>
-            <img src={lightbox} alt="Foto ampliada" className="lightbox-img" />
+            <button className="lightbox-close" onClick={() => setLightboxIndex(null)}>✕</button>
+            {photos.length > 1 && (
+              <button className="lightbox-prev" onClick={() => setLightboxIndex((p) => (p === 0 ? photos.length - 1 : p - 1))}>‹</button>
+            )}
+            <img src={photos[lightboxIndex]} alt={`${data.name} ${lightboxIndex + 1}`} className="lightbox-img" />
+            {photos.length > 1 && (
+              <button className="lightbox-next" onClick={() => setLightboxIndex((p) => (p === photos.length - 1 ? 0 : p + 1))}>›</button>
+            )}
+            {photos.length > 1 && (
+              <span className="lightbox-counter">{lightboxIndex + 1} / {photos.length}</span>
+            )}
           </div>
         </div>,
         document.body
@@ -263,6 +285,12 @@ function GearMember() {
           ))}
         </div>
       ))}
+
+      <div className="gear-back-bottom">
+        <button className="nav-btn gear-nav" onClick={() => navigate("/gear")}>
+          ← GEAR
+        </button>
+      </div>
     </div>
   );
 }
