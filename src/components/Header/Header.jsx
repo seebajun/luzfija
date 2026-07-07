@@ -25,7 +25,7 @@ function Header() {
       <nav className="nav-links">
         <Link to="/" className="nav-btn home-nav">HOME</Link>
         <Link to="/gear" className="nav-btn gear-nav">GEAR</Link>
-        <Link to="/contacto" className="nav-btn info-nav">CONTACTO</Link>
+        <Link to="/contacto" className="nav-btn contacto-nav">CONTACTO</Link>
         <a
           href="https://www.instagram.com/luz.fija/"
           target="_blank"
