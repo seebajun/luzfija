@@ -5,6 +5,16 @@
   padding: 1.5rem;
   backdrop-filter: blur(5px);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.bio-card {
+  cursor: pointer;
+}
+
+.bio-card:hover {
+  border-color: #ff66ff;
+  box-shadow: 0 0 20px rgba(255, 102, 255, 0.4);
 }
 
 .bio-text {
@@ -12,6 +22,37 @@
   line-height: 1.5;
   font-size: 0.95rem;
   color: white;
+  overflow: hidden;
+  max-height: 8rem;
+  position: relative;
+}
+
+.bio-card.expanded .bio-text {
+  max-height: none;
+}
+
+.bio-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9));
+  pointer-events: none;
+}
+
+.bio-card.expanded .bio-text::after {
+  display: none;
+}
+
+.bio-expand-hint {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #ff66ff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #ff66ff;
 }
 
 .dropcap {

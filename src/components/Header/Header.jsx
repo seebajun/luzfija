@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo/Luzfija_Logo.png";
 import "./Header.css";
 
 function Header() {
@@ -15,9 +16,7 @@ function Header() {
     <header className={`y2k-header${scrolled ? " scrolled" : ""}`}>
       <div className="band-name">
         <Link to="/" className="band-link">
-          <h1 className="glitch-text" data-text="LUZ FIJA">
-            LUZ FIJA
-          </h1>
+          <img src={logo} alt="Luz Fija" className="header-logo" />
         </Link>
         <p className="single-title">「 VESPUCIO 」</p>
       </div>

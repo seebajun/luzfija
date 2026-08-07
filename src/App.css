@@ -17,99 +17,14 @@
 
 body {
   padding-bottom: 3.5rem;
-  background: #ff66ff;
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.15) 0px,
-      rgba(255, 255, 0, 0.1) 2px,
-      transparent 2px,
-      transparent 8px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.1) 0px,
-      rgba(0, 255, 255, 0.1) 1px,
-      transparent 1px,
-      transparent 4px
-    );
+  background-color: #ff66ff;
+  background-image: url("./assets/logo/Fondo.png");
+  background-repeat: repeat;
+  background-size: 3024px 3024px;
   font-family: monospace;
   color: white;
   min-height: 100vh;
-  animation: staticNoise 0.15s steps(2) infinite;
   position: relative;
-}
-
-@keyframes staticNoise {
-  0% {
-    background-color: #eecaed;
-  }
-  50% {
-    background-color: #f5b6f7;
-  }
-  100% {
-    background-color: #f7cff3;
-  }
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-conic-gradient(
-    from 0deg,
-    rgba(255, 255, 255, 0.1) 0deg 90deg,
-    rgba(0, 255, 255, 0.1) 90deg 180deg,
-    rgba(255, 255, 0, 0.1) 180deg 270deg,
-    rgba(255, 102, 255, 0.1) 270deg 360deg
-  );
-  pointer-events: none;
-  z-index: 999;
-  mix-blend-mode: overlay;
-  animation: rgbShift 0.5s linear infinite;
-}
-
-@keyframes rgbShift {
-  0% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 0.2;
-  }
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.15) 0px,
-    rgba(0, 0, 0, 0.15) 2px,
-    transparent 2px,
-    transparent 6px
-  );
-  pointer-events: none;
-  z-index: 998;
-  animation: scanlines 0.2s linear infinite;
-}
-
-@keyframes scanlines {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(4px);
-  }
 }
 
 .y2k-container {
