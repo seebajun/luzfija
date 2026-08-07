@@ -123,6 +123,11 @@
     justify-content: center;
   }
 
+  .band-link {
+    display: flex;
+    justify-content: center;
+  }
+
   .nav-links {
     justify-content: center;
   }
