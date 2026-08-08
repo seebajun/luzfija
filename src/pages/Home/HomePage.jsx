@@ -2,6 +2,11 @@ import Hero from "../../components/Hero/Hero";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import BioCard from "../../components/BioCard/BioCard";
 import PhotoGallery from "../../components/PhotoGallery/PhotoGallery";
+import gifNow01 from "../../assets/GIF/gif_now01.gif";
+import gifCool01 from "../../assets/GIF/gif_cool01.gif";
+import gifCool02 from "../../assets/GIF/gif_cool02.gif";
+import gifFfix01 from "../../assets/GIF/gif_ffix01.gif";
+import gifKof01 from "../../assets/GIF/gif_kof01.gif";
 import "./HomePage.css";
 
 function HomePage() {
@@ -13,7 +18,7 @@ function HomePage() {
         <Sidebar />
 
         <main className="main-content">
-          <BioCard title="BIOGRAFÍA" dropcapLetter="L">
+          <BioCard title="BIOGRAFÍA" dropcapLetter="L" gif={gifCool01}>
             uzFija es una banda Chilena
             formada en Santiago, comuna de La Florida, en el año 2020 por 4
             amigos que coinciden en un trabajo de retail en un centro
@@ -34,9 +39,10 @@ function HomePage() {
             electrónicos glitch tipo hyper-pop, sonoridades oscuras
             referenciadas de bandas visual kei como Buck-Thick y estructuras
             compositivas cercanas al post-rock.
+            <img className="expanded-gif expanded-gif-big" src={gifKof01} alt="" />
           </BioCard>
 
-          <BioCard title="Vespucio" dropcapLetter="V">
+          <BioCard title="Vespucio" dropcapLetter="V" gif={gifCool02} gifAlign="right">
             espucio es el regreso de LuzFija
             tras años de su EP debut editado en 2021. El sencillo refleja una
             evolución tanto sonora como lírica: Elementos sintéticos más
@@ -71,14 +77,16 @@ function HomePage() {
             con pequeñas modificaciones menores, el sentimiento de
             estancamiento del protagonista es validado pero con el matiz que
             no todos los días son exactamente el mismo.
+            <img className="expanded-gif" src={gifFfix01} alt="" />
           </BioCard>
 
           <PhotoGallery />
 
           <div className="gif-banner">
-            <span>⚡ BEST VIEWED WITH 1024x768 ⚡</span>
             <span>
-              🐱 <blink>NOW HIRING WEBMASTERS</blink> 🐱
+              <img src={gifNow01} className="gif-now" alt="" />
+              <blink>NOW HIRING WEBMASTERS</blink>
+              <img src={gifNow01} className="gif-now" alt="" />
             </span>
           </div>
         </main>

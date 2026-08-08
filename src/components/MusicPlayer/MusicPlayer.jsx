@@ -1,5 +1,10 @@
 import { useState, useRef } from "react";
 import vespucioMp3 from "../../assets/mp3/01 - Vespucio.mp3";
+import gifReproductor01 from "../../assets/GIF/gif_reproductor01.gif";
+import gifReproductor02 from "../../assets/GIF/gif_reproductor02.gif";
+import gifReproductor03 from "../../assets/GIF/gif_reproductor03.gif";
+import gifReproductor04 from "../../assets/GIF/gif_reproductor04.gif";
+import gifReproductor05 from "../../assets/GIF/gif_reproductor05.gif";
 import "./MusicPlayer.css";
 
 function MusicPlayer() {
@@ -60,6 +65,11 @@ function MusicPlayer() {
         onEnded={() => setIsPlaying(false)}
       />
       <div className="winamp-player">
+        <img className="winamp-gif winamp-gif-left" src={gifReproductor01} alt="" />
+        <img className="winamp-gif winamp-gif-left-center" src={gifReproductor02} alt="" />
+        <img className="winamp-gif winamp-gif-center" src={gifReproductor03} alt="" />
+        <img className="winamp-gif winamp-gif-right-center" src={gifReproductor04} alt="" />
+        <img className="winamp-gif winamp-gif-right" src={gifReproductor05} alt="" />
         <div className="wa-led">
           <div className="wa-eq">
             <div className="eq-bar"></div>

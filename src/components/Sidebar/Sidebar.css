@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  z-index: 150;
 }
 
 .news-card {
@@ -15,6 +16,46 @@
   backdrop-filter: blur(5px);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   animation: cardPulse 2s infinite;
+  position: relative;
+}
+
+.discography-gif {
+  position: absolute;
+  bottom: 100%;
+  left: 8px;
+  z-index: 201;
+  height: 44px;
+  width: auto;
+  pointer-events: none;
+}
+
+.news-goldensun {
+  position: absolute;
+  bottom: 100%;
+  right: 8px;
+  z-index: 201;
+  display: flex;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.news-goldensun img {
+  height: 44px;
+  width: auto;
+}
+
+.news-card-noticias .section-title {
+  position: relative;
+}
+
+.news-title-gif {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(calc(-50% - 6px));
+  height: 1.8em;
+  width: auto;
+  pointer-events: none;
 }
 
 @keyframes cardPulse {
@@ -37,6 +78,34 @@
   color: #ff66ff;
   font-size: 0.7rem;
   font-weight: bold;
+}
+
+.news-star-gif {
+  height: 0.9em;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+}
+
+.discography-card .section-title {
+  position: relative;
+}
+
+.discografia-title-gif {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(calc(-50% - 6px));
+  height: 1.5em;
+  width: auto;
+  pointer-events: none;
+}
+
+.discografia-note-gif {
+  height: 0.9em;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.4rem;
 }
 
 .construction-box {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo/Luzfija_Logo.png";
+import logo from "../../assets/logo/Luzfija_Logo.webp";
 import "./Header.css";
 
 function Header() {

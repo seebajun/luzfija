@@ -113,6 +113,7 @@
 .wa-progress-wrap {
   flex: 1;
   min-width: 60px;
+  position: relative;
 }
 
 .wa-progress-bar {
@@ -131,6 +132,38 @@
   transition: width 0.1s linear;
   border-radius: 2px;
   box-shadow: 0 0 6px #00ff41;
+}
+
+.winamp-gif {
+  position: absolute;
+  bottom: 100%;
+  z-index: 201;
+  height: 44px;
+  width: auto;
+  pointer-events: none;
+}
+
+.winamp-gif-left {
+  left: 8px;
+}
+
+.winamp-gif-left-center {
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+.winamp-gif-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.winamp-gif-right-center {
+  left: 75%;
+  transform: translateX(-50%);
+}
+
+.winamp-gif-right {
+  right: 8px;
 }
 
 .player-card {
@@ -182,5 +215,17 @@
 
   .wa-progress-bar {
     height: 6px;
+  }
+
+  .winamp-gif {
+    height: 32px;
+  }
+
+  .winamp-gif-left {
+    left: 6px;
+  }
+
+  .winamp-gif-right {
+    right: 6px;
   }
 }

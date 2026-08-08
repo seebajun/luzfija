@@ -13,3 +13,10 @@
   color: #00ff41;
   text-shadow: 0 0 10px #00ff41;
 }
+
+.contacto-gif {
+  display: block;
+  height: 3rem;
+  width: auto;
+  margin: 0.5rem auto 0;
+}

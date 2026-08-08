@@ -6,6 +6,22 @@
   backdrop-filter: blur(5px);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   transition: box-shadow 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.bio-card-gif {
+  position: absolute;
+  bottom: 100%;
+  left: 8px;
+  z-index: 201;
+  height: 44px;
+  width: auto;
+  pointer-events: none;
+}
+
+.bio-card-gif-right {
+  left: auto;
+  right: 8px;
 }
 
 .bio-card {
@@ -44,6 +60,23 @@
 
 .bio-card.expanded .bio-text::after {
   display: none;
+}
+
+.expanded-gif {
+  display: none;
+  height: 3rem;
+  width: auto;
+  margin-top: 0.5rem;
+}
+
+.bio-card.expanded .expanded-gif {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expanded-gif-big {
+  height: 6rem !important;
 }
 
 .bio-expand-hint {

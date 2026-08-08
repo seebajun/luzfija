@@ -35,6 +35,26 @@
   mix-blend-mode: normal;
 }
 
+.hero-gif {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 32px;
+  width: auto;
+  max-width: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .hero-gif {
+    height: 24px;
+  }
+}
+
 .hero-glitch-overlay {
   position: absolute;
   top: 0;

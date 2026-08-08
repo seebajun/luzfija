@@ -1,3 +1,4 @@
+import gifWawa01 from "../../assets/GIF/gif_wawa01.gif";
 import "./ContactoPage.css";
 
 function ContactoPage() {
@@ -36,6 +37,7 @@ function ContactoPage() {
             <p className="contacto-email">
               📧 contacto@luzfija.cl
             </p>
+            <img className="contacto-gif" src={gifWawa01} alt="" />
           </div>
         </main>
       </div>

@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = parse(fileURLToPath(import.meta.url)).dir;
 const root = join(__dirname, "..");
-const targetDirs = ["src/assets/photos", "src/assets/photos_gear"];
+const targetDirs = ["src/assets/photos", "src/assets/photos_gear", "src/assets/logo"];
 const extensions = new Set([".jpeg", ".jpg", ".png", ".heic", ".HEIC"]);
 const quality = 80;
 
