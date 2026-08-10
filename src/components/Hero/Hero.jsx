@@ -13,7 +13,7 @@ function Hero() {
         <img
           src={photo06}
           srcSet={`${photo06Hero480} 480w, ${photo06Hero664} 664w, ${photo06Hero768} 768w, ${photo06Hero1080} 1080w, ${photo06} 1400w`}
-          sizes="(min-width: 1200px) 1090px, 100vw"
+          sizes="(min-width: 1200px) 1080px, 100vw"
           alt="Luz Fija - Vespucio"
           className="hero-image"
           fetchPriority="high"

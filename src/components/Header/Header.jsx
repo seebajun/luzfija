@@ -21,13 +21,16 @@ function Header() {
     <header className={`y2k-header${scrolled ? " scrolled" : ""}`}>
       <div className="band-name">
         <Link to="/" className="band-link">
-          <img
-            src={logo}
-            srcSet={`${logo166} 166w, ${logo284} 284w, ${logo} 475w`}
-            sizes="(min-width: 768px) 237px, 95px"
-            alt="Luz Fija"
-            className="header-logo"
-          />
+          <picture>
+            <source media="(max-width: 767px)" srcSet={logo166} />
+            <img
+              src={logo284}
+              srcSet={`${logo284} 284w, ${logo} 475w`}
+              sizes="237px"
+              alt="Luz Fija"
+              className="header-logo"
+            />
+          </picture>
         </Link>
         <p className="single-title">「 VESPUCIO 」</p>
       </div>
