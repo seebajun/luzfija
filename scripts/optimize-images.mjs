@@ -7,11 +7,15 @@ const __dirname = parse(fileURLToPath(import.meta.url)).dir;
 const root = join(__dirname, "..");
 const targetDirs = ["src/assets/photos"];
 const extensions = new Set([".webp"]);
-const thumbWidth = 400;
+const thumbWidth = 311;
 const quality = 72;
-const heroWidth = 1400;
 const heroQuality = 75;
 const heroTargets = new Set(["photo06"]);
+const heroVariants = [
+  { suffix: "", width: 1400 },
+  { suffix: "_1080", width: 1080 },
+  { suffix: "_768", width: 768 },
+];
 
 let converted = 0;
 let skipped = 0;
@@ -55,20 +59,22 @@ async function optimize(filePath, thumbDir) {
   }
 
   if (heroTargets.has(parsed.name)) {
-    const heroPath = join(parsed.dir, parsed.name + "_hero.webp");
-    if (existsSync(heroPath)) {
-      console.log(`  - ${parsed.base} -> ya existe variante hero`);
-      skipped++;
-    } else {
-      await sharp(filePath)
-        .resize({ width: heroWidth, withoutEnlargement: true })
-        .webp({ quality: heroQuality })
-        .toFile(heroPath);
-      const heroAfter = statSync(heroPath).size;
-      console.log(
-        `  + ${parsed.base} -> ${parse(heroPath).base} (${formatBytes(heroAfter)})`,
-      );
-      converted++;
+    for (const variant of heroVariants) {
+      const heroPath = join(parsed.dir, parsed.name + "_hero" + variant.suffix + ".webp");
+      if (existsSync(heroPath)) {
+        console.log(`  - ${parsed.base} -> ya existe variante hero${variant.suffix || ""}`);
+        skipped++;
+      } else {
+        await sharp(filePath)
+          .resize({ width: variant.width, withoutEnlargement: true })
+          .webp({ quality: heroQuality })
+          .toFile(heroPath);
+        const heroAfter = statSync(heroPath).size;
+        console.log(
+          `  + ${parsed.base} -> ${parse(heroPath).base} (${formatBytes(heroAfter)})`,
+        );
+        converted++;
+      }
     }
   }
 }
