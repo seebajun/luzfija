@@ -8,15 +8,22 @@ const root = join(__dirname, "..");
 const targetDirs = ["src/assets/photos"];
 const extensions = new Set([".webp"]);
 const thumbWidth = 311;
-const quality = 72;
+const quality = 50;
 const heroQuality = 75;
 const heroTargets = new Set(["photo06"]);
 const heroVariants = [
   { suffix: "", width: 1400 },
   { suffix: "_1080", width: 1080 },
   { suffix: "_768", width: 768 },
+  { suffix: "_664", width: 664 },
+  { suffix: "_480", width: 480 },
 ];
 const logoResize = { file: "src/assets/logo/Luzfija_Logo.webp", width: 475, quality: 80 };
+const logoVariants = [
+  { suffix: "", width: 475 },
+  { suffix: "_284", width: 284 },
+  { suffix: "_166", width: 166 },
+];
 
 let converted = 0;
 let skipped = 0;
@@ -111,30 +118,40 @@ async function processAll() {
   console.log(`Fallidos: ${failed}`);
   console.log("=================================\n");
 
-  if (logoResize) {
-    const logoPath = join(root, logoResize.file);
-    if (!existsSync(logoPath)) {
-      console.warn(`  Logo no encontrado: ${logoResize.file}`);
-    } else {
+  for (const variant of logoVariants) {
+    const logoDir = join(root, "src", "assets", "logo");
+    const logoPath = join(logoDir, "Luzfija_Logo" + variant.suffix + ".webp");
+    if (existsSync(logoPath)) {
       const logoMeta = await sharp(logoPath).metadata();
-      if (logoMeta.width === logoResize.width) {
-        console.log(`  ${logoResize.file} -> ya esta en ${logoResize.width}px`);
-      } else {
-        const beforeLogo = statSync(logoPath).size;
-        const tmpLogo = join(root, "src", "assets", "logo", "_logo_tmp.webp");
-        await sharp(logoPath)
-          .resize({ width: logoResize.width, withoutEnlargement: true })
-          .webp({ quality: logoResize.quality })
-          .toBuffer()
-          .then((buffer) => writeFileSync(tmpLogo, buffer));
-        rmSync(logoPath, { force: true });
-        renameSync(tmpLogo, logoPath);
-        const afterLogo = statSync(logoPath).size;
-        console.log(
-          `\n  ${logoResize.file} (${formatBytes(beforeLogo)} -> ${formatBytes(afterLogo)})`,
-        );
+      if (logoMeta.width === variant.width) {
+        console.log(`  ${parse(logoPath).base} -> ya esta en ${variant.width}px`);
+        continue;
       }
     }
+    if (variant.suffix === "") {
+      console.warn(`  Logo base no encontrado: ${parse(logoPath).base}`);
+      continue;
+    }
+    const beforeLogo = existsSync(logoPath) ? statSync(logoPath).size : 0;
+    const buffer = await sharp(
+      join(logoDir, "Luzfija_Logo.webp"),
+    )
+      .resize({ width: variant.width, withoutEnlargement: true })
+      .webp({ quality: logoResize.quality })
+      .toBuffer();
+    if (existsSync(logoPath)) {
+      const tmpLogo = join(logoDir, "_logo_tmp.webp");
+      writeFileSync(tmpLogo, buffer);
+      rmSync(logoPath, { force: true });
+      renameSync(tmpLogo, logoPath);
+    } else {
+      writeFileSync(logoPath, buffer);
+    }
+    const afterLogo = statSync(logoPath).size;
+    console.log(
+      `  + ${parse(logoPath).base} (${formatBytes(beforeLogo)} -> ${formatBytes(afterLogo)})`,
+    );
+    converted++;
   }
 
   if (failed > 0) {

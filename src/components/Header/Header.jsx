@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/Luzfija_Logo.webp";
+import logo284 from "../../assets/logo/Luzfija_Logo_284.webp";
+import logo166 from "../../assets/logo/Luzfija_Logo_166.webp";
 import "./Header.css";
 
 function Header() {
@@ -19,7 +21,13 @@ function Header() {
     <header className={`y2k-header${scrolled ? " scrolled" : ""}`}>
       <div className="band-name">
         <Link to="/" className="band-link">
-          <img src={logo} alt="Luz Fija" className="header-logo" />
+          <img
+            src={logo}
+            srcSet={`${logo166} 166w, ${logo284} 284w, ${logo} 475w`}
+            sizes="(min-width: 768px) 237px, 95px"
+            alt="Luz Fija"
+            className="header-logo"
+          />
         </Link>
         <p className="single-title">「 VESPUCIO 」</p>
       </div>
