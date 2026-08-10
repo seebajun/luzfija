@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const fondo = FONDOS[Math.floor(Math.random() * FONDOS.length)];
-    document.body.style.backgroundImage = `url("${fondo}")`;
+    document.getElementById("root").style.backgroundImage = `url("${fondo}")`;
   }, []);
 
   return (

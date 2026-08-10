@@ -1,6 +1,8 @@
 import gifCool03 from "../../assets/GIF/gif_cool03.gif";
 import gifGoldensun01 from "../../assets/GIF/gif_goldensun01.gif";
 import gifGoldensun02 from "../../assets/GIF/gif_goldensun02.gif";
+import gifGoldensun03 from "../../assets/GIF/gif_goldensun03.gif";
+import gifGoldensun04 from "../../assets/GIF/gif_goldensun04.gif";
 import gifNew05 from "../../assets/GIF/gif_new05.gif";
 import gifStar01 from "../../assets/GIF/gif_star01.gif";
 import gifDiscografia01 from "../../assets/GIF/gif_discografia01.gif";
@@ -14,6 +16,8 @@ function Sidebar() {
         <div className="news-goldensun">
           <img src={gifGoldensun01} alt="" />
           <img src={gifGoldensun02} alt="" />
+          <img src={gifGoldensun03} alt="" />
+          <img src={gifGoldensun04} alt="" />
         </div>
         <h3 className="section-title cyan">
           <img className="news-title-gif" src={gifNew05} alt="" />

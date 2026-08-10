@@ -1,3 +1,43 @@
+.contacto-hero {
+  position: relative;
+}
+
+.contacto-hero-gif {
+  position: absolute;
+  top: 0.5rem;
+  height: 3rem;
+  width: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.contacto-hero-gif-left {
+  left: 1rem;
+}
+
+.contacto-hero-gif-right {
+  right: 1rem;
+}
+
+.contacto-card-gif {
+  position: absolute;
+  bottom: 100%;
+  left: 8px;
+  z-index: 201;
+  height: 40px;
+  width: auto;
+  pointer-events: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.contacto-card-gif-right {
+  left: auto;
+  right: 8px;
+}
+
 .contacto-link {
   color: #ff66ff;
   text-decoration: underline;
@@ -18,5 +58,31 @@
   display: block;
   height: 3rem;
   width: auto;
-  margin: 0.5rem auto 0;
+}
+
+.contacto-gif-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .contacto-hero-gif {
+    height: 2rem;
+    top: 0.25rem;
+  }
+
+  .contacto-hero-gif-left {
+    left: 0.25rem;
+  }
+
+  .contacto-hero-gif-right {
+    right: 0.25rem;
+  }
+
+  .contacto-card-gif {
+    height: 32px;
+  }
 }

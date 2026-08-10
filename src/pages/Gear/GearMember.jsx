@@ -1,7 +1,10 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import "./Gear.css";
+import gifAnime03 from "../../assets/GIF/gif_anime03.gif";
+import gifAnime04 from "../../assets/GIF/gif_anime04.gif";
+import gifAnime05 from "../../assets/GIF/gif_anime05.gif";
 import photoAriel from "../../assets/photos_gear/photo_ariel_gear.webp";
 import photoAriel2 from "../../assets/photos_gear/photo_ariel_gear_others.webp";
 import photoGonzalo01 from "../../assets/photos_gear/photo_gonzalo_gear01.webp";
@@ -242,14 +245,19 @@ function GearMember() {
           ← GEAR
         </button>
         <div className="gear-member-title">
-          <h1 className="glitch-text" data-text={data.name.toUpperCase()}>
-            {data.name.toUpperCase()}
-          </h1>
+          <div className="gear-member-title-row">
+            <img className="gear-member-gif" src={gifAnime03} alt="" />
+            <h1 className="glitch-text" data-text={data.name.toUpperCase()}>
+              {data.name.toUpperCase()}
+            </h1>
+            <img className="gear-member-gif" src={gifAnime04} alt="" />
+          </div>
           <p className="single-title">{data.role}</p>
         </div>
       </div>
 
       <div className="gear-member-photos">
+        <img className="gear-member-photos-gif" src={gifAnime05} alt="" />
         {renderPhotos()}
       </div>
 
