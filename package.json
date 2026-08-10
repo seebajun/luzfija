@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "convert-webp": "node scripts/convert-to-webp.mjs",
+    "optimize:thumbs": "node scripts/optimize-images.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
