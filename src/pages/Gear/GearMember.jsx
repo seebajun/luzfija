@@ -88,7 +88,7 @@ const gearData = {
     ],
   },
   guillermo: {
-    name: "Guillermo Palma",
+    name: "Guillermo",
     role: "Guitarra",
     categories: [
       {
@@ -176,8 +176,10 @@ function GearMember() {
     if (lightboxIndex === null) return;
     const onKey = (e) => {
       if (e.key === "Escape") setLightboxIndex(null);
-      if (e.key === "ArrowLeft") setLightboxIndex((p) => (p === 0 ? photos.length - 1 : p - 1));
-      if (e.key === "ArrowRight") setLightboxIndex((p) => (p === photos.length - 1 ? 0 : p + 1));
+      if (e.key === "ArrowLeft")
+        setLightboxIndex((p) => (p === 0 ? photos.length - 1 : p - 1));
+      if (e.key === "ArrowRight")
+        setLightboxIndex((p) => (p === photos.length - 1 ? 0 : p + 1));
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -194,7 +196,12 @@ function GearMember() {
     }
     if (photos.length === 1) {
       return (
-        <img src={photos[0]} alt={data.name} className="gear-photo" onClick={() => setLightboxIndex(0)} />
+        <img
+          src={photos[0]}
+          alt={data.name}
+          className="gear-photo"
+          onClick={() => setLightboxIndex(0)}
+        />
       );
     }
     return (
@@ -206,17 +213,42 @@ function GearMember() {
             alt={`${data.name} ${i + 1}`}
             className="gear-photo"
             style={{ display: i === carouselIndex ? "block" : "none" }}
-            onClick={() => { setCarouselIndex(i); setLightboxIndex(i); }}
+            onClick={() => {
+              setCarouselIndex(i);
+              setLightboxIndex(i);
+            }}
           />
         ))}
         <div className="gear-carousel-controls">
-          <button className="gear-carousel-btn" onClick={() => setCarouselIndex((prev) => (prev === 0 ? photos.length - 1 : prev - 1))}>‹</button>
+          <button
+            className="gear-carousel-btn"
+            onClick={() =>
+              setCarouselIndex((prev) =>
+                prev === 0 ? photos.length - 1 : prev - 1,
+              )
+            }
+          >
+            ‹
+          </button>
           <span className="gear-carousel-dots">
             {photos.map((_, i) => (
-              <span key={i} className={`gear-carousel-dot${i === carouselIndex ? " active" : ""}`} onClick={() => setCarouselIndex(i)} />
+              <span
+                key={i}
+                className={`gear-carousel-dot${i === carouselIndex ? " active" : ""}`}
+                onClick={() => setCarouselIndex(i)}
+              />
             ))}
           </span>
-          <button className="gear-carousel-btn" onClick={() => setCarouselIndex((prev) => (prev === photos.length - 1 ? 0 : prev + 1))}>›</button>
+          <button
+            className="gear-carousel-btn"
+            onClick={() =>
+              setCarouselIndex((prev) =>
+                prev === photos.length - 1 ? 0 : prev + 1,
+              )
+            }
+          >
+            ›
+          </button>
         </div>
       </div>
     );
@@ -230,7 +262,10 @@ function GearMember() {
             404
           </h1>
           <p>MIEMBRO NO ENCONTRADO</p>
-          <button className="nav-btn gear-nav" onClick={() => navigate("/gear")}>
+          <button
+            className="nav-btn gear-nav"
+            onClick={() => navigate("/gear")}
+          >
             ← GEAR
           </button>
         </div>
@@ -261,24 +296,55 @@ function GearMember() {
         {renderPhotos()}
       </div>
 
-      {lightboxIndex !== null && createPortal(
-        <div className="lightbox" onClick={() => setLightboxIndex(null)}>
-          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button className="lightbox-close" onClick={() => setLightboxIndex(null)}>✕</button>
-            {photos.length > 1 && (
-              <button className="lightbox-prev" onClick={() => setLightboxIndex((p) => (p === 0 ? photos.length - 1 : p - 1))}>‹</button>
-            )}
-            <img src={photos[lightboxIndex]} alt={`${data.name} ${lightboxIndex + 1}`} className="lightbox-img" />
-            {photos.length > 1 && (
-              <button className="lightbox-next" onClick={() => setLightboxIndex((p) => (p === photos.length - 1 ? 0 : p + 1))}>›</button>
-            )}
-            {photos.length > 1 && (
-              <span className="lightbox-counter">{lightboxIndex + 1} / {photos.length}</span>
-            )}
-          </div>
-        </div>,
-        document.body
-      )}
+      {lightboxIndex !== null &&
+        createPortal(
+          <div className="lightbox" onClick={() => setLightboxIndex(null)}>
+            <div
+              className="lightbox-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="lightbox-close"
+                onClick={() => setLightboxIndex(null)}
+              >
+                ✕
+              </button>
+              <img
+                src={photos[lightboxIndex]}
+                alt={`${data.name} ${lightboxIndex + 1}`}
+                className="lightbox-img"
+              />
+              {photos.length > 1 && (
+                <div className="lightbox-controls">
+                  <button
+                    className="lightbox-prev"
+                    onClick={() =>
+                      setLightboxIndex((p) =>
+                        p === 0 ? photos.length - 1 : p - 1,
+                      )
+                    }
+                  >
+                    ‹
+                  </button>
+                  <span className="lightbox-counter">
+                    {lightboxIndex + 1} / {photos.length}
+                  </span>
+                  <button
+                    className="lightbox-next"
+                    onClick={() =>
+                      setLightboxIndex((p) =>
+                        p === photos.length - 1 ? 0 : p + 1,
+                      )
+                    }
+                  >
+                    ›
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>,
+          document.body,
+        )}
 
       {data.categories.map((cat, i) => (
         <div key={i} className="gear-list">

@@ -10,11 +10,41 @@ import gifCloud04 from "../../assets/GIF/gif_cloud04.gif";
 import gifCloud05 from "../../assets/GIF/gif_cloud05.gif";
 
 const members = [
-  { slug: "ariel", name: "Ariel", role: "Voz / Guitarra / Sintes / Secuencias", gif: gifCloud01 },
-  { slug: "gonzalo", name: "Gonzalo", role: "Sintetizadores", gif: gifCloud02 },
-  { slug: "guillermo", name: "Guillermo Palma", role: "Guitarra", gif: gifCloud03 },
-  { slug: "alejandro", name: "Alejandro", role: "Bajo", gif: gifCloud04 },
-  { slug: "monitoreo", name: "Monitoreo", role: "Monitoreo", gif: gifCloud05 },
+  {
+    slug: "ariel",
+    name: "Ariel",
+    role: "Voz / Guitarra / Sintes / Secuencias",
+    gif: gifCloud01,
+    gifPos: "left",
+  },
+  {
+    slug: "gonzalo",
+    name: "Gonzalo",
+    role: "Sintetizadores",
+    gif: gifCloud02,
+    gifPos: "center",
+  },
+  {
+    slug: "guillermo",
+    name: "Guillermo",
+    role: "Guitarra",
+    gif: gifCloud03,
+    gifPos: "right",
+  },
+  {
+    slug: "alejandro",
+    name: "Alejandro",
+    role: "Bajo",
+    gif: gifCloud04,
+    gifPos: "center",
+  },
+  {
+    slug: "monitoreo",
+    name: "Monitoreo",
+    role: "Monitoreo",
+    gif: gifCloud05,
+    gifPos: "left",
+  },
 ];
 
 function GearPage() {
@@ -23,8 +53,16 @@ function GearPage() {
   return (
     <div className="y2k-container">
       <section className="gear-hero">
-        <img className="gear-hero-gif gear-hero-gif-left" src={gifAnime01} alt="" />
-        <img className="gear-hero-gif gear-hero-gif-right" src={gifAnime02} alt="" />
+        <img
+          className="gear-hero-gif gear-hero-gif-left"
+          src={gifAnime01}
+          alt=""
+        />
+        <img
+          className="gear-hero-gif gear-hero-gif-right"
+          src={gifAnime02}
+          alt=""
+        />
         <img className="gear-hero-gif-center" src={gifCool04} alt="" />
         <h1 className="glitch-text" data-text="GEAR PARA NERDS">
           GEAR PARA NERDS
@@ -39,7 +77,11 @@ function GearPage() {
             className="gear-card"
             onClick={() => navigate(`/gear/${member.slug}`)}
           >
-            <img className="gear-card-gif" src={member.gif} alt="" />
+            <img
+              className={`gear-card-gif gear-card-gif-${member.gifPos}`}
+              src={member.gif}
+              alt=""
+            />
             <div className="gear-card-image">
               <span className="gear-card-placeholder">📸</span>
             </div>

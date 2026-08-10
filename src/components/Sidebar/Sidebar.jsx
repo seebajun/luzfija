@@ -7,6 +7,12 @@ import gifNew05 from "../../assets/GIF/gif_new05.gif";
 import gifStar01 from "../../assets/GIF/gif_star01.gif";
 import gifDiscografia01 from "../../assets/GIF/gif_discografia01.gif";
 import gifNote01 from "../../assets/GIF/gif_note01.gif";
+import gifRo01 from "../../assets/GIF/gif_ro01.gif";
+import gifBand01 from "../../assets/GIF/gif_band01.gif";
+import gifBand02 from "../../assets/GIF/gif_band02.gif";
+import gifBand03 from "../../assets/GIF/gif_band03.gif";
+import gifBand04 from "../../assets/GIF/gif_band04.gif";
+import gifBand05 from "../../assets/GIF/gif_band05.gif";
 import "./Sidebar.css";
 
 function Sidebar() {
@@ -78,6 +84,32 @@ function Sidebar() {
           <li>
             <img className="discografia-note-gif" src={gifNote01} alt="" />
             Demo 2000
+          </li>
+        </ul>
+      </div>
+
+      <div className="news-card banda-card">
+        <img className="banda-gif" src={gifRo01} alt="" />
+        <h3 className="section-title cyan">
+          <img className="banda-title-gif" src={gifBand05} alt="" />
+          LA BANDA
+        </h3>
+        <ul className="discography">
+          <li>
+            <img className="discografia-note-gif" src={gifBand01} alt="" />
+            Ariel — Voz / Guitarra / Sintes / Secuencias
+          </li>
+          <li>
+            <img className="discografia-note-gif" src={gifBand02} alt="" />
+            Gonzalo — Sintetizadores
+          </li>
+          <li>
+            <img className="discografia-note-gif" src={gifBand03} alt="" />
+            Guillermo Palma — Guitarra
+          </li>
+          <li>
+            <img className="discografia-note-gif" src={gifBand04} alt="" />
+            Alejandro — Bajo
           </li>
         </ul>
       </div>

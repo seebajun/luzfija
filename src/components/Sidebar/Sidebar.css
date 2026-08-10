@@ -1,7 +1,5 @@
 .sidebar {
   grid-area: sidebar;
-  position: sticky;
-  top: 5rem;
   align-self: start;
   display: flex;
   flex-direction: column;
@@ -25,6 +23,32 @@
   left: 8px;
   z-index: 201;
   height: 44px;
+  width: auto;
+  pointer-events: none;
+}
+
+.banda-gif {
+  position: absolute;
+  bottom: 100%;
+  left: 8px;
+  z-index: 201;
+  height: 40px;
+  width: auto;
+  pointer-events: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.banda-card .section-title {
+  position: relative;
+}
+
+.banda-title-gif {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(calc(-50% - 6px));
+  height: 1.5em;
   width: auto;
   pointer-events: none;
 }
@@ -145,10 +169,4 @@
 .discography li {
   padding: 0.3rem 0;
   font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    position: static;
-  }
 }

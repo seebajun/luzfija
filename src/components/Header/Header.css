@@ -13,14 +13,6 @@
   display: block;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  transition: height 0.3s;
-}
-
-.y2k-header .single-title {
-  transition:
-    font-size 0.3s,
-    letter-spacing 0.3s,
-    margin 0.3s;
 }
 
 .nav-links {
@@ -28,7 +20,6 @@
   gap: 0.5rem;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  transition: gap 0.3s;
 }
 
 .header-gif {
@@ -56,10 +47,8 @@
 }
 
 .y2k-header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -67,17 +56,10 @@
   padding: 1rem 1.5rem 0.6rem;
   background: rgba(0, 0, 0, 0.9);
   border-bottom: 2px solid white;
-  margin-inline: auto;
-  max-width: 1126px;
   gap: 0.6rem;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
   flex-wrap: nowrap;
   overflow-anchor: none;
-  transition:
-    padding 0.3s,
-    gap 0.3s,
-    border-bottom-width 0.3s,
-    height 0.3s;
 }
 
 .y2k-header.scrolled {
@@ -172,7 +154,10 @@
   font-weight: bold;
   text-decoration: none;
   font-family: monospace;
-  transition: all 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
   cursor: pointer;
   white-space: nowrap;
 }

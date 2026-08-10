@@ -46,15 +46,13 @@ function PhotoGallery() {
         <div className="lightbox" onClick={() => setLightboxIndex(null)}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <button className="lightbox-close" onClick={() => setLightboxIndex(null)}>✕</button>
-            {photos.length > 1 && (
-              <button className="lightbox-prev" onClick={() => setLightboxIndex((p) => (p === 0 ? photos.length - 1 : p - 1))}>‹</button>
-            )}
             <img src={photos[lightboxIndex].src} alt={photos[lightboxIndex].alt} className="lightbox-img" />
             {photos.length > 1 && (
-              <button className="lightbox-next" onClick={() => setLightboxIndex((p) => (p === photos.length - 1 ? 0 : p + 1))}>›</button>
-            )}
-            {photos.length > 1 && (
-              <span className="lightbox-counter">{lightboxIndex + 1} / {photos.length}</span>
+              <div className="lightbox-controls">
+                <button className="lightbox-prev" onClick={() => setLightboxIndex((p) => (p === 0 ? photos.length - 1 : p - 1))}>‹</button>
+                <span className="lightbox-counter">{lightboxIndex + 1} / {photos.length}</span>
+                <button className="lightbox-next" onClick={() => setLightboxIndex((p) => (p === photos.length - 1 ? 0 : p + 1))}>›</button>
+              </div>
             )}
           </div>
         </div>,
