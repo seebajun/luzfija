@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo284 from "../../assets/logo/Luzfija_Logo_284.webp";
+import logo237 from "../../assets/logo/Luzfija_Logo_237.webp";
 import logo166 from "../../assets/logo/Luzfija_Logo_166.webp";
 import "./Header.css";
 
@@ -22,7 +22,7 @@ function Header() {
         <Link to="/" className="band-link">
           <picture>
             <source media="(max-width: 767px)" srcSet={logo166} />
-            <img src={logo284} alt="Luz Fija" className="header-logo" />
+            <img src={logo237} alt="Luz Fija" className="header-logo" />
           </picture>
         </Link>
         <p className="single-title">「 VESPUCIO 」</p>

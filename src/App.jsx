@@ -7,8 +7,8 @@ import Header from "./components/Header/Header";
 import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
 import Footer from "./components/Footer/Footer";
 
-import Fondo01 from "./assets/logo/Fondo01.webp";
-import Fondo02 from "./assets/logo/Fondo02.webp";
+import Fondo01 from "./assets/fondos/Fondo01.webp";
+import Fondo02 from "./assets/fondos/Fondo02.webp";
 
 const FONDOS = [Fondo01, Fondo02];
 

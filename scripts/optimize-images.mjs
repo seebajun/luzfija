@@ -12,16 +12,13 @@ const quality = 50;
 const heroQuality = 75;
 const heroTargets = new Set(["photo06"]);
 const heroVariants = [
-  { suffix: "", width: 1400 },
   { suffix: "_1080", width: 1080 },
-  { suffix: "_768", width: 768 },
   { suffix: "_664", width: 664 },
   { suffix: "_480", width: 480 },
 ];
 const logoResize = { file: "src/assets/logo/Luzfija_Logo.webp", width: 475, quality: 80 };
 const logoVariants = [
-  { suffix: "", width: 475 },
-  { suffix: "_284", width: 284 },
+  { suffix: "_237", width: 237 },
   { suffix: "_166", width: 166 },
 ];
 const thumbDir = join(root, "src", "assets", "thumbs");
@@ -128,10 +125,6 @@ async function processAll() {
         console.log(`  ${parse(logoPath).base} -> ya esta en ${variant.width}px`);
         continue;
       }
-    }
-    if (variant.suffix === "") {
-      console.warn(`  Logo base no encontrado: ${parse(logoPath).base}`);
-      continue;
     }
     const beforeLogo = existsSync(logoPath) ? statSync(logoPath).size : 0;
     const buffer = await sharp(
