@@ -7,7 +7,6 @@ import gifNew05 from "../../assets/GIF/gif_new05.gif";
 import gifStar01 from "../../assets/GIF/gif_star01.gif";
 import gifDiscografia01 from "../../assets/GIF/gif_discografia01.gif";
 import gifNote01 from "../../assets/GIF/gif_note01.gif";
-import gifRo01 from "../../assets/GIF/gif_ro01.gif";
 import gifBand01 from "../../assets/GIF/gif_band01.gif";
 import gifBand02 from "../../assets/GIF/gif_band02.gif";
 import gifBand03 from "../../assets/GIF/gif_band03.gif";
@@ -89,7 +88,6 @@ function Sidebar() {
       </div>
 
       <div className="news-card banda-card">
-        <img className="banda-gif" src={gifRo01} alt="" />
         <h3 className="section-title cyan">
           <img className="banda-title-gif" src={gifBand05} alt="" />
           LA BANDA

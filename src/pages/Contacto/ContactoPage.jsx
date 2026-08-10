@@ -2,6 +2,7 @@ import gifWawa01 from "../../assets/GIF/gif_wawa01.gif";
 import gifCloud06 from "../../assets/GIF/gif_cloud06.gif";
 import gifCloud07 from "../../assets/GIF/gif_cloud07.gif";
 import gifRo02 from "../../assets/GIF/gif_ro02.gif";
+import gifRo01 from "../../assets/GIF/gif_ro01.gif";
 import gofEva01 from "../../assets/GIF/gof_eva01.gif";
 import "./ContactoPage.css";
 
@@ -48,6 +49,7 @@ function ContactoPage() {
           <div className="contacto-gif-row">
             <img className="contacto-gif" src={gifWawa01} alt="" />
             <img className="contacto-gif" src={gofEva01} alt="" />
+            <img className="contacto-gif" src={gifRo01} alt="" />
           </div>
         </div>
       </main>
