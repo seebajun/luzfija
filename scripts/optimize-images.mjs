@@ -98,7 +98,7 @@ async function processAll() {
       console.warn(`  Directorio no encontrado: ${relDir}`);
       continue;
     }
-    const thumbDir = join(absDir, "thumbs");
+    const thumbDir = join(root, "src", "assets", "thumbs");
     const images = getAllImages(absDir);
     console.log(`\n  ${relDir} — ${images.length} imagenes encontradas`);
 

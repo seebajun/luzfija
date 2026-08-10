@@ -6,12 +6,12 @@ import photo03 from "../../assets/photos/photo03.webp";
 import photo04 from "../../assets/photos/photo04.webp";
 import photo05 from "../../assets/photos/photo05.webp";
 import photo06 from "../../assets/photos/photo06.webp";
-import photo01Thumb from "../../assets/photos/thumbs/photo01_thumb.webp";
-import photo02Thumb from "../../assets/photos/thumbs/photo02_thumb.webp";
-import photo03Thumb from "../../assets/photos/thumbs/photo03_thumb.webp";
-import photo04Thumb from "../../assets/photos/thumbs/photo04_thumb.webp";
-import photo05Thumb from "../../assets/photos/thumbs/photo05_thumb.webp";
-import photo06Thumb from "../../assets/photos/thumbs/photo06_thumb.webp";
+import photo01Thumb from "../../assets/thumbs/photo01_thumb.webp";
+import photo02Thumb from "../../assets/thumbs/photo02_thumb.webp";
+import photo03Thumb from "../../assets/thumbs/photo03_thumb.webp";
+import photo04Thumb from "../../assets/thumbs/photo04_thumb.webp";
+import photo05Thumb from "../../assets/thumbs/photo05_thumb.webp";
+import photo06Thumb from "../../assets/thumbs/photo06_thumb.webp";
 import "./PhotoGallery.css";
 
 const photos = [
