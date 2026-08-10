@@ -9,6 +9,9 @@ const targetDirs = ["src/assets/photos"];
 const extensions = new Set([".webp"]);
 const thumbWidth = 400;
 const quality = 72;
+const heroWidth = 1400;
+const heroQuality = 75;
+const heroTargets = new Set(["photo06"]);
 
 let converted = 0;
 let skipped = 0;
@@ -36,21 +39,38 @@ async function optimize(filePath, thumbDir) {
   if (existsSync(thumbPath)) {
     console.log(`  - ${parsed.base} -> ya existe thumb`);
     skipped++;
-    return;
+  } else {
+    mkdirSync(thumbDir, { recursive: true });
+    await sharp(filePath)
+      .resize({ width: thumbWidth, withoutEnlargement: true })
+      .webp({ quality })
+      .toFile(thumbPath);
+
+    const before = statSync(filePath).size;
+    const after = statSync(thumbPath).size;
+    console.log(
+      `  + ${parsed.base} -> ${parse(thumbPath).base} (${formatBytes(before)} -> ${formatBytes(after)})`,
+    );
+    converted++;
   }
 
-  mkdirSync(thumbDir, { recursive: true });
-  await sharp(filePath)
-    .resize({ width: thumbWidth, withoutEnlargement: true })
-    .webp({ quality })
-    .toFile(thumbPath);
-
-  const before = statSync(filePath).size;
-  const after = statSync(thumbPath).size;
-  console.log(
-    `  + ${parsed.base} -> ${parse(thumbPath).base} (${formatBytes(before)} -> ${formatBytes(after)})`,
-  );
-  converted++;
+  if (heroTargets.has(parsed.name)) {
+    const heroPath = join(parsed.dir, parsed.name + "_hero.webp");
+    if (existsSync(heroPath)) {
+      console.log(`  - ${parsed.base} -> ya existe variante hero`);
+      skipped++;
+    } else {
+      await sharp(filePath)
+        .resize({ width: heroWidth, withoutEnlargement: true })
+        .webp({ quality: heroQuality })
+        .toFile(heroPath);
+      const heroAfter = statSync(heroPath).size;
+      console.log(
+        `  + ${parsed.base} -> ${parse(heroPath).base} (${formatBytes(heroAfter)})`,
+      );
+      converted++;
+    }
+  }
 }
 
 async function processAll() {
