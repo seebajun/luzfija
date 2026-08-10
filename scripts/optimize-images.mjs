@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import { readdirSync, statSync, existsSync, mkdirSync } from "fs";
+import { readdirSync, statSync, existsSync, mkdirSync, writeFileSync, rmSync, renameSync } from "fs";
 import { join, extname, parse } from "path";
 import { fileURLToPath } from "url";
 
@@ -16,6 +16,7 @@ const heroVariants = [
   { suffix: "_1080", width: 1080 },
   { suffix: "_768", width: 768 },
 ];
+const logoResize = { file: "src/assets/logo/Luzfija_Logo.webp", width: 475, quality: 80 };
 
 let converted = 0;
 let skipped = 0;
@@ -28,7 +29,11 @@ function getAllImages(dir) {
     for (const entry of entries) {
       const fullPath = join(dir, entry);
       const stat = statSync(fullPath);
-      if (stat.isFile() && extensions.has(extname(entry).toLowerCase())) {
+      if (
+        stat.isFile() &&
+        extensions.has(extname(entry).toLowerCase()) &&
+        !/hero/i.test(entry)
+      ) {
         results.push(fullPath);
       }
     }
@@ -105,6 +110,32 @@ async function processAll() {
   console.log(`Omitidos (ya existian): ${skipped}`);
   console.log(`Fallidos: ${failed}`);
   console.log("=================================\n");
+
+  if (logoResize) {
+    const logoPath = join(root, logoResize.file);
+    if (!existsSync(logoPath)) {
+      console.warn(`  Logo no encontrado: ${logoResize.file}`);
+    } else {
+      const logoMeta = await sharp(logoPath).metadata();
+      if (logoMeta.width === logoResize.width) {
+        console.log(`  ${logoResize.file} -> ya esta en ${logoResize.width}px`);
+      } else {
+        const beforeLogo = statSync(logoPath).size;
+        const tmpLogo = join(root, "src", "assets", "logo", "_logo_tmp.webp");
+        await sharp(logoPath)
+          .resize({ width: logoResize.width, withoutEnlargement: true })
+          .webp({ quality: logoResize.quality })
+          .toBuffer()
+          .then((buffer) => writeFileSync(tmpLogo, buffer));
+        rmSync(logoPath, { force: true });
+        renameSync(tmpLogo, logoPath);
+        const afterLogo = statSync(logoPath).size;
+        console.log(
+          `\n  ${logoResize.file} (${formatBytes(beforeLogo)} -> ${formatBytes(afterLogo)})`,
+        );
+      }
+    }
+  }
 
   if (failed > 0) {
     process.exit(1);
