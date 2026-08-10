@@ -1,8 +1,8 @@
-import photo06 from "../../assets/photos/photo06_hero.webp";
-import photo06Hero1080 from "../../assets/photos/photo06_hero_1080.webp";
-import photo06Hero768 from "../../assets/photos/photo06_hero_768.webp";
-import photo06Hero664 from "../../assets/photos/photo06_hero_664.webp";
-import photo06Hero480 from "../../assets/photos/photo06_hero_480.webp";
+import photo06 from "../../assets/hero/photo06_hero.webp";
+import photo06Hero1080 from "../../assets/hero/photo06_hero_1080.webp";
+import photo06Hero768 from "../../assets/hero/photo06_hero_768.webp";
+import photo06Hero664 from "../../assets/hero/photo06_hero_664.webp";
+import photo06Hero480 from "../../assets/hero/photo06_hero_480.webp";
 import gifNav01 from "../../assets/GIF/gif_nav01.gif";
 import "./Hero.css";
 

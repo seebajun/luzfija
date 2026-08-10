@@ -24,6 +24,8 @@ const logoVariants = [
   { suffix: "_284", width: 284 },
   { suffix: "_166", width: 166 },
 ];
+const thumbDir = join(root, "src", "assets", "thumbs");
+const heroDir = join(root, "src", "assets", "hero");
 
 let converted = 0;
 let skipped = 0;
@@ -72,7 +74,7 @@ async function optimize(filePath, thumbDir) {
 
   if (heroTargets.has(parsed.name)) {
     for (const variant of heroVariants) {
-      const heroPath = join(parsed.dir, parsed.name + "_hero" + variant.suffix + ".webp");
+      const heroPath = join(heroDir, parsed.name + "_hero" + variant.suffix + ".webp");
       if (existsSync(heroPath)) {
         console.log(`  - ${parsed.base} -> ya existe variante hero${variant.suffix || ""}`);
         skipped++;
@@ -98,7 +100,6 @@ async function processAll() {
       console.warn(`  Directorio no encontrado: ${relDir}`);
       continue;
     }
-    const thumbDir = join(root, "src", "assets", "thumbs");
     const images = getAllImages(absDir);
     console.log(`\n  ${relDir} — ${images.length} imagenes encontradas`);
 
