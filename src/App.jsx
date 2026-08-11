@@ -9,8 +9,11 @@ import Footer from "./components/Footer/Footer";
 
 import Fondo01 from "./assets/fondos/Fondo01.webp";
 import Fondo02 from "./assets/fondos/Fondo02.webp";
+import Fondo01Mobile from "./assets/fondos/Fondo01_480.webp";
+import Fondo02Mobile from "./assets/fondos/Fondo02_480.webp";
 
 const FONDOS = [Fondo01, Fondo02];
+const FONDOS_MOBILE = [Fondo01Mobile, Fondo02Mobile];
 
 function App() {
   const { pathname } = useLocation();
@@ -20,8 +23,15 @@ function App() {
   }, [pathname]);
 
   useEffect(() => {
-    const fondo = FONDOS[Math.floor(Math.random() * FONDOS.length)];
-    document.getElementById("root").style.backgroundImage = `url("${fondo}")`;
+    const isMobile = window.matchMedia("(max-width: 768px)");
+    const setFondo = () => {
+      const pool = isMobile.matches ? FONDOS_MOBILE : FONDOS;
+      const fondo = pool[Math.floor(Math.random() * pool.length)];
+      document.getElementById("root").style.backgroundImage = `url("${fondo}")`;
+    };
+    setFondo();
+    isMobile.addEventListener("change", setFondo);
+    return () => isMobile.removeEventListener("change", setFondo);
   }, []);
 
   return (

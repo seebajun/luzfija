@@ -5,9 +5,11 @@ import { fileURLToPath } from "url";
 
 const __dirname = parse(fileURLToPath(import.meta.url)).dir;
 const root = join(__dirname, "..");
-const targetDirs = ["src/assets/photos"];
+const targetDirs = [
+  { dir: "src/assets/photos", thumbDir: "src/assets/thumbs", width: 311 },
+  { dir: "src/assets/photos_gear", thumbDir: "src/assets/thumbs_gear", width: 1080 },
+];
 const extensions = new Set([".webp"]);
-const thumbWidth = 311;
 const quality = 50;
 const heroQuality = 75;
 const heroTargets = new Set(["photo06"]);
@@ -23,6 +25,9 @@ const logoVariants = [
 ];
 const thumbDir = join(root, "src", "assets", "thumbs");
 const heroDir = join(root, "src", "assets", "hero");
+const fondoDir = join(root, "src", "assets", "fondos");
+const fondoMobileWidth = 480;
+const fondoQuality = 40;
 
 let converted = 0;
 let skipped = 0;
@@ -47,7 +52,7 @@ function getAllImages(dir) {
   return results;
 }
 
-async function optimize(filePath, thumbDir) {
+async function optimize(filePath, thumbDir, width) {
   const parsed = parse(filePath);
   const thumbPath = join(thumbDir, parsed.name + "_thumb.webp");
 
@@ -57,7 +62,7 @@ async function optimize(filePath, thumbDir) {
   } else {
     mkdirSync(thumbDir, { recursive: true });
     await sharp(filePath)
-      .resize({ width: thumbWidth, withoutEnlargement: true })
+      .resize({ width, withoutEnlargement: true })
       .webp({ quality })
       .toFile(thumbPath);
 
@@ -91,18 +96,19 @@ async function optimize(filePath, thumbDir) {
 }
 
 async function processAll() {
-  for (const relDir of targetDirs) {
-    const absDir = join(root, relDir);
+  for (const { dir, thumbDir, width } of targetDirs) {
+    const absDir = join(root, dir);
+    const absThumbDir = join(root, thumbDir);
     if (!existsSync(absDir)) {
-      console.warn(`  Directorio no encontrado: ${relDir}`);
+      console.warn(`  Directorio no encontrado: ${dir}`);
       continue;
     }
     const images = getAllImages(absDir);
-    console.log(`\n  ${relDir} — ${images.length} imagenes encontradas`);
+    console.log(`\n  ${dir} — ${images.length} imagenes encontradas`);
 
     for (const filePath of images) {
       try {
-        await optimize(filePath, thumbDir);
+        await optimize(filePath, absThumbDir, width);
       } catch (err) {
         console.log(`  X ${parse(filePath).base}: ${err.message.split("\n")[0]}`);
         failed++;
@@ -142,8 +148,36 @@ async function processAll() {
       writeFileSync(logoPath, buffer);
     }
     const afterLogo = statSync(logoPath).size;
+console.log(
+    `  + ${parse(logoPath).base} (${formatBytes(beforeLogo)} -> ${formatBytes(afterLogo)})`,
+  );
+  converted++;
+  }
+
+  for (const name of ["Fondo01", "Fondo02"]) {
+    const srcPath = join(fondoDir, name + ".webp");
+    const mobPath = join(fondoDir, name + "_480.webp");
+    if (!existsSync(srcPath)) continue;
+    if (existsSync(mobPath) && (await sharp(mobPath).metadata()).width === fondoMobileWidth) {
+      console.log(`  - ${parse(mobPath).base} -> ya esta en ${fondoMobileWidth}px`);
+      continue;
+    }
+    const beforeFondo = existsSync(mobPath) ? statSync(mobPath).size : 0;
+    const buffer = await sharp(srcPath)
+      .resize({ width: fondoMobileWidth, withoutEnlargement: true })
+      .webp({ quality: fondoQuality })
+      .toBuffer();
+    if (existsSync(mobPath)) {
+      const tmpFondo = join(fondoDir, "_fondo_tmp.webp");
+      writeFileSync(tmpFondo, buffer);
+      rmSync(mobPath, { force: true });
+      renameSync(tmpFondo, mobPath);
+    } else {
+      writeFileSync(mobPath, buffer);
+    }
+    const afterFondo = statSync(mobPath).size;
     console.log(
-      `  + ${parse(logoPath).base} (${formatBytes(beforeLogo)} -> ${formatBytes(afterLogo)})`,
+      `  + ${parse(mobPath).base} (${formatBytes(beforeFondo)} -> ${formatBytes(afterFondo)})`,
     );
     converted++;
   }

@@ -16,6 +16,17 @@ import photoGuillermoStrap from "../../assets/photos_gear/photo_guillermo_gear_s
 import photoAlejandro from "../../assets/photos_gear/photo_alejandro_gear_pedales.webp";
 import photoMonitoreo from "../../assets/photos_gear/photo_gear_monitoreo.webp";
 import photoMonitoreo02 from "../../assets/photos_gear/photo_gear_monitoreo02.webp";
+import photoArielThumb from "../../assets/thumbs_gear/photo_ariel_gear_thumb.webp";
+import photoAriel2Thumb from "../../assets/thumbs_gear/photo_ariel_gear_others_thumb.webp";
+import photoGonzalo01Thumb from "../../assets/thumbs_gear/photo_gonzalo_gear01_thumb.webp";
+import photoGonzalo02Thumb from "../../assets/thumbs_gear/photo_gonzalo_gear02_thumb.webp";
+import photoGonzalo03Thumb from "../../assets/thumbs_gear/photo_gonzalo_gear03_thumb.webp";
+import photoGuillermoThumb from "../../assets/thumbs_gear/photo_guillermo_gear_thumb.webp";
+import photoGuillermoBagThumb from "../../assets/thumbs_gear/photo_guillermo_gear_bag_thumb.webp";
+import photoGuillermoStrapThumb from "../../assets/thumbs_gear/photo_guillermo_gear_strap_thumb.webp";
+import photoAlejandroThumb from "../../assets/thumbs_gear/photo_alejandro_gear_pedales_thumb.webp";
+import photoMonitoreoThumb from "../../assets/thumbs_gear/photo_gear_monitoreo_thumb.webp";
+import photoMonitoreo02Thumb from "../../assets/thumbs_gear/photo_gear_monitoreo02_thumb.webp";
 
 const gearData = {
   ariel: {
@@ -148,7 +159,7 @@ const gearData = {
         items: [{ gear: "Behringer X AIR XR18 (Formato Rack)" }],
       },
       {
-        title: "Monitoreo Inalámbrico",
+        title: "Monitoreo por cable",
         items: [{ gear: "Bolanle P2 IEM Amplificador de Audífonos personal" }],
       },
     ],
@@ -170,7 +181,20 @@ function GearMember() {
     monitoreo: [photoMonitoreo, photoMonitoreo02],
   };
 
+  const memberThumbs = {
+    ariel: [photoArielThumb, photoAriel2Thumb],
+    gonzalo: [photoGonzalo01Thumb, photoGonzalo02Thumb, photoGonzalo03Thumb],
+    guillermo: [
+      photoGuillermoThumb,
+      photoGuillermoBagThumb,
+      photoGuillermoStrapThumb,
+    ],
+    alejandro: [photoAlejandroThumb],
+    monitoreo: [photoMonitoreoThumb, photoMonitoreo02Thumb],
+  };
+
   const photos = memberPhotos[member] || [];
+  const thumbs = memberThumbs[member] || [];
 
   useEffect(() => {
     if (lightboxIndex === null) return;
@@ -197,9 +221,11 @@ function GearMember() {
     if (photos.length === 1) {
       return (
         <img
-          src={photos[0]}
+          src={thumbs[0] || photos[0]}
           alt={data.name}
           className="gear-photo"
+          loading="lazy"
+          decoding="async"
           onClick={() => setLightboxIndex(0)}
         />
       );
@@ -209,9 +235,11 @@ function GearMember() {
         {photos.map((src, i) => (
           <img
             key={i}
-            src={src}
+            src={thumbs[i] || src}
             alt={`${data.name} ${i + 1}`}
             className="gear-photo"
+            loading="lazy"
+            decoding="async"
             style={{ display: i === carouselIndex ? "block" : "none" }}
             onClick={() => {
               setCarouselIndex(i);

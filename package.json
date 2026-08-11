@@ -6,7 +6,7 @@
   "homepage": "https://seebajun.github.io/luzfija",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/inline-css.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "convert-webp": "node scripts/convert-to-webp.mjs",

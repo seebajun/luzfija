@@ -39,7 +39,7 @@ function HomePage() {
             electrónicos glitch tipo hyper-pop, sonoridades oscuras
             referenciadas de bandas visual kei como Buck-Thick y estructuras
             compositivas cercanas al post-rock.
-            <img className="expanded-gif expanded-gif-big" src={gifKof01} alt="" />
+            <img className="expanded-gif expanded-gif-big" src={gifKof01} alt="" loading="lazy" decoding="async" />
           </BioCard>
 
           <BioCard title="Vespucio" dropcapLetter="V" gif={gifCool02} gifAlign="right">
@@ -77,16 +77,16 @@ function HomePage() {
             con pequeñas modificaciones menores, el sentimiento de
             estancamiento del protagonista es validado pero con el matiz que
             no todos los días son exactamente el mismo.
-            <img className="expanded-gif" src={gifFfix01} alt="" />
+            <img className="expanded-gif" src={gifFfix01} alt="" loading="lazy" decoding="async" />
           </BioCard>
 
           <PhotoGallery />
 
           <div className="gif-banner">
             <span>
-              <img src={gifNow01} className="gif-now" alt="" />
+              <img src={gifNow01} className="gif-now" alt="" loading="lazy" decoding="async" />
               <blink>NOW HIRING WEBMASTERS</blink>
-              <img src={gifNow01} className="gif-now" alt="" />
+              <img src={gifNow01} className="gif-now" alt="" loading="lazy" decoding="async" />
             </span>
           </div>
         </main>

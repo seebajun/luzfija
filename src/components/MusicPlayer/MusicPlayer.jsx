@@ -60,6 +60,7 @@ function MusicPlayer() {
       <audio
         ref={audioRef}
         src={vespucioMp3}
+        preload="none"
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={() => setIsPlaying(false)}
