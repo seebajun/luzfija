@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://seebajun.github.io/luzfija",
+  "homepage": "https://luzfija.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/inline-css.mjs",
@@ -11,8 +11,7 @@
     "preview": "vite preview",
     "convert-webp": "node scripts/convert-to-webp.mjs",
     "optimize:thumbs": "node scripts/optimize-images.mjs",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && node scripts/deploy-aws.mjs"
   },
   "dependencies": {
     "react": "^19.2.6",
@@ -27,7 +26,6 @@
     "eslint": "^10.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
-    "gh-pages": "^6.3.0",
     "globals": "^17.6.0",
     "sharp": "^0.35.3",
     "vite": "^8.0.12"

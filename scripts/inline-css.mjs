@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from "fs";
-import { join, dirname } from "path";
+import { join, dirname, basename } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -12,8 +12,7 @@ function inlineCss() {
   const linkRegex = /<link rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/g;
   let matches = 0;
   html = html.replace(linkRegex, (fullTag, href) => {
-    const hrefPath = href.replace(/^\/[^/]+/, "");
-    const filePath = join(distDir, hrefPath);
+    const filePath = join(distDir, "assets", basename(href));
     const css = readFileSync(filePath, "utf8");
     matches++;
     return `<style>${css}</style>`;
@@ -26,4 +25,11 @@ function inlineCss() {
   console.log(`inline-css: ${matches} hoja(s) de estilo inlinadas en index.html`);
 }
 
+function createSpaFallback() {
+  const html = readFileSync(htmlPath, "utf8");
+  writeFileSync(join(distDir, "404.html"), html);
+  console.log("inline-css: 404.html generado (fallback SPA)");
+}
+
 inlineCss();
+createSpaFallback();

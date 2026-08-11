@@ -16,7 +16,7 @@ function PageFallback() {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/luzfija">
+    <BrowserRouter>
       <Routes>
         <Route element={<App />}>
           <Route
