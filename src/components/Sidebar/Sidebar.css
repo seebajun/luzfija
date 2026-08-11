@@ -7,6 +7,13 @@
   z-index: 150;
 }
 
+@media (min-width: 769px) {
+  .sidebar {
+    position: sticky;
+    top: 5.4rem;
+  }
+}
+
 .news-card {
   background: rgba(0, 0, 0, 0.85);
   border: 2px solid white;
@@ -169,4 +176,22 @@
 .discography li {
   padding: 0.3rem 0;
   font-size: 0.9rem;
+}
+
+.banda-item-separator {
+  margin-top: 0.75rem;
+  border-top: 1px dashed #ff66ff;
+  padding-top: 1.3rem;
+}
+
+.banda-item-link {
+  color: cyan;
+  text-decoration: none;
+  text-shadow: 0 0 8px cyan;
+}
+
+.banda-item-link:hover {
+  color: #ff66ff;
+  text-decoration: underline;
+  text-shadow: 0 0 8px #ff66ff;
 }

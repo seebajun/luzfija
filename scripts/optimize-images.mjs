@@ -18,11 +18,6 @@ const heroVariants = [
   { suffix: "_664", width: 664 },
   { suffix: "_480", width: 480 },
 ];
-const logoResize = { file: "src/assets/logo/Luzfija_Logo.webp", width: 475, quality: 80 };
-const logoVariants = [
-  { suffix: "_237", width: 237 },
-  { suffix: "_166", width: 166 },
-];
 const thumbDir = join(root, "src", "assets", "thumbs");
 const heroDir = join(root, "src", "assets", "hero");
 const fondoDir = join(root, "src", "assets", "fondos");
@@ -121,38 +116,6 @@ async function processAll() {
   console.log(`Omitidos (ya existian): ${skipped}`);
   console.log(`Fallidos: ${failed}`);
   console.log("=================================\n");
-
-  for (const variant of logoVariants) {
-    const logoDir = join(root, "src", "assets", "logo");
-    const logoPath = join(logoDir, "Luzfija_Logo" + variant.suffix + ".webp");
-    if (existsSync(logoPath)) {
-      const logoMeta = await sharp(logoPath).metadata();
-      if (logoMeta.width === variant.width) {
-        console.log(`  ${parse(logoPath).base} -> ya esta en ${variant.width}px`);
-        continue;
-      }
-    }
-    const beforeLogo = existsSync(logoPath) ? statSync(logoPath).size : 0;
-    const buffer = await sharp(
-      join(logoDir, "Luzfija_Logo.webp"),
-    )
-      .resize({ width: variant.width, withoutEnlargement: true })
-      .webp({ quality: logoResize.quality })
-      .toBuffer();
-    if (existsSync(logoPath)) {
-      const tmpLogo = join(logoDir, "_logo_tmp.webp");
-      writeFileSync(tmpLogo, buffer);
-      rmSync(logoPath, { force: true });
-      renameSync(tmpLogo, logoPath);
-    } else {
-      writeFileSync(logoPath, buffer);
-    }
-    const afterLogo = statSync(logoPath).size;
-console.log(
-    `  + ${parse(logoPath).base} (${formatBytes(beforeLogo)} -> ${formatBytes(afterLogo)})`,
-  );
-  converted++;
-  }
 
   for (const name of ["Fondo01", "Fondo02"]) {
     const srcPath = join(fondoDir, name + ".webp");
