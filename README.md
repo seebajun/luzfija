@@ -1,9 +1,11 @@
-# 🎸 Luz Fija
+<p align="center">
+  <img src="./src/assets/logo/Luzfija_Logo.webp" alt="Luz Fija" width="320">
+</p>
 
 ![Website](https://img.shields.io/website?url=https://www.luzfija.com)
 ![AWS](https://img.shields.io/badge/Hosting-AWS_S3_%2B_CloudFront-orange?logo=amazon-aws)
-![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
-![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)
 
 > Sitio web oficial de la banda **Luz Fija**. Booking, portafolio, fechas y lanzamiento del EP "Vespucio".
 
@@ -13,12 +15,9 @@
 
 ## 📸 Capturas de pantalla
 
-| Vista principal | Reproductor Winamp |
-|-----------------|-------------------|
-| *(Agrega aquí una imagen de la página principal)* | *(Agrega aquí una imagen del reproductor)* |
-
-> **Tip:** Puedes agregar capturas en la carpeta `screenshots/` y referenciarlas así:
-> `![Home](./screenshots/home.png)`
+| Vista principal | Vista móvil | Reproductor Winamp |
+|-----------------|-------------|-------------------|
+| ![Vista principal](./screenshots/home.webp) | ![Vista móvil](./screenshots/mobilehome.webp) | ![Reproductor Winamp](./screenshots/reproductor.webp) |
 
 ---
 
@@ -36,7 +35,7 @@
 
 ## 🛠️ Tecnologías utilizadas
 
-- **Frontend:** React 18
+- **Frontend:** React 19
 - **Bundler:** Vite
 - **Enrutamiento:** React Router
 - **Hosting:** AWS S3 + CloudFront
