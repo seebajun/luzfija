@@ -51,4 +51,7 @@ El sitio está alojado en **AWS S3** como sitio web estático, con **CloudFront*
 ### Comando de despliegue
 
 ```bash
-npm run deploy --bucket=luzfija.com --distribution=EJEMPLOID
+npm run deploy --bucket=TU-BUCKET-S3 --distribution=TU-ID-CLOUDFRONT
+```
+
+> También puedes usar las variables de entorno `AWS_S3_BUCKET` y `AWS_CF_DISTRIBUTION_ID` para no exponer valores en el repositorio.
