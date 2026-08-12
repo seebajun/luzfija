@@ -1,16 +1,55 @@
-# React + Vite
+# 🎸 Luz Fija
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Website](https://img.shields.io/website?url=https://www.luzfija.com)
+![AWS](https://img.shields.io/badge/Hosting-AWS_S3_%2B_CloudFront-orange?logo=amazon-aws)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
+![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite)
 
-Currently, two official plugins are available:
+> Sitio web oficial de la banda **Luz Fija**. Booking, portafolio, fechas y lanzamiento del EP "Vespucio".
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **Visita la web en:** [www.luzfija.com](https://www.luzfija.com)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📸 Capturas de pantalla
 
-## Expanding the ESLint configuration
+| Vista principal | Reproductor Winamp |
+|-----------------|-------------------|
+| *(Agrega aquí una imagen de la página principal)* | *(Agrega aquí una imagen del reproductor)* |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> **Tip:** Puedes agregar capturas en la carpeta `screenshots/` y referenciarlas así:
+> `![Home](./screenshots/home.png)`
+
+---
+
+## ✨ Características principales
+
+- 🎵 **Landing page** con la identidad visual de la banda.
+- 📅 **Calendario de fechas** de próximos shows.
+- 🖼️ **Galería de fotos** de la banda.
+- 🎧 **Reproductor tipo Winamp** para el lanzamiento de *Vespucio EP*.
+- 🎨 **Estilo personal y único**, no replicable directamente.
+- 🌐 **Navegación fluida** con React Router.
+- ⚡ **Rendimiento optimizado** con Vite.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- **Frontend:** React 18
+- **Bundler:** Vite
+- **Enrutamiento:** React Router
+- **Hosting:** AWS S3 + CloudFront
+- **Despliegue:** Script personalizado con AWS CLI
+- **Estilos:** CSS
+
+---
+
+## 🚀 Despliegue en AWS
+
+El sitio está alojado en **AWS S3** como sitio web estático, con **CloudFront** como CDN para mejorar la velocidad y seguridad.
+
+### Comando de despliegue
+
+```bash
+npm run deploy --bucket=luzfija.com --distribution=EJEMPLOID
