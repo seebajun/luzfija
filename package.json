@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "convert-webp": "node scripts/convert-to-webp.mjs",
     "optimize:thumbs": "node scripts/optimize-images.mjs",
-    "deploy": "npm run build && node scripts/deploy-aws.mjs"
+    "deploy": "npm run build && node scripts/deploy-aws.mjs",
+    "deploy:sso": "npm run build && node scripts/deploy-aws.mjs"
   },
   "dependencies": {
     "react": "^19.2.6",

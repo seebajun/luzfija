@@ -48,10 +48,32 @@
 
 El sitio está alojado en **AWS S3** como sitio web estático, con **CloudFront** como CDN para mejorar la velocidad y seguridad.
 
-### Comando de despliegue
+### Despliegue con SSO (recomendado)
 
-```bash
-npm run deploy --bucket=TU-BUCKET-S3 --distribution=TU-ID-CLOUDFRONT
-```
+Los valores de la cuenta (bucket, distribution ID, perfil SSO) no se guardan en el repositorio. Se cargan desde `set-env.ps1`, que es un archivo local ignorado por git.
 
-> También puedes usar las variables de entorno `AWS_S3_BUCKET` y `AWS_CF_DISTRIBUTION_ID` para no exponer valores en el repositorio.
+1. Configurar AWS SSO (una sola vez, ya hecho en este repo):
+
+   ```bash
+   aws configure sso --profile luzfija
+   ```
+
+2. Iniciar sesión en el portal (se abre el navegador):
+
+   ```bash
+   aws sso login --profile luzfija
+   ```
+
+3. Cargar las variables de entorno locales:
+
+   ```powershell
+   .\set-env.ps1
+   ```
+
+4. Desplegar:
+
+   ```bash
+   npm run deploy:sso
+   ```
+
+> `set-env.ps1` define `AWS_PROFILE`, `AWS_S3_BUCKET` y `AWS_CF_DISTRIBUTION_ID` y está excluido de git para no exponer valores reales. También puedes definir esas variables manualmente o pasar `--bucket` y `--distribution` como argumentos.
