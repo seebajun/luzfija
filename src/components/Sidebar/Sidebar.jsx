@@ -173,7 +173,7 @@ function Sidebar() {
               loading="lazy"
               decoding="async"
             />
-            Guillermo Palma — Guitarra
+            Guillermo — Guitarra
           </li>
           <li>
             <img

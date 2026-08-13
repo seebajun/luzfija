@@ -45,7 +45,7 @@ function ContactoPage() {
             </a>{" "}
             o por correo electrónico.
           </p>
-          <p className="contacto-email">📧 contacto@luzfija.cl</p>
+          <p className="contacto-email">📧 luzfija.contacto@gmail.com</p>
           <div className="contacto-gif-row">
             <img className="contacto-gif" src={gifWawa01} alt="" />
             <img className="contacto-gif" src={gofEva01} alt="" />
