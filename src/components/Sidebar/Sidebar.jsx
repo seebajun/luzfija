@@ -35,6 +35,21 @@ function Sidebar() {
           />
           NOTICIAS
         </h3>
+
+        <div className="news-item">
+          <span className="news-date">xx.xx.2026</span>
+          <p>
+            <img
+              className="news-star-gif"
+              src={gifStar01}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            Nuevo Single "Pacto" disponible en todas las plataformas.
+          </p>
+        </div>
+
         <div className="news-item">
           <span className="news-date">13.08.2026</span>
           <p>
@@ -48,19 +63,7 @@ function Sidebar() {
             Nuevo Single "Vespucio" disponible en todas las plataformas.
           </p>
         </div>
-        <div className="news-item">
-          <span className="news-date">xx.xx.2026</span>
-          <p>
-            <img
-              className="news-star-gif"
-              src={gifStar01}
-              alt=""
-              loading="lazy"
-              decoding="async"
-            />
-            Live session en la bodega de la pega del Ale.
-          </p>
-        </div>
+
         <div className="news-item">
           <span className="news-date">31.08.2026</span>
           <p>
@@ -71,7 +74,7 @@ function Sidebar() {
               loading="lazy"
               decoding="async"
             />
-            Tocata Lanzamiento Vespucio con los amigos.
+            Tocata Lanzamiento Vespucio/Pacto con los amigos.
           </p>
         </div>
 
@@ -108,7 +111,18 @@ function Sidebar() {
               loading="lazy"
               decoding="async"
             />
-            Luz Fija - Vespucio Single 2026
+            Luz Fija - Pacto (2026)
+          </li>
+
+          <li>
+            <img
+              className="discografia-note-gif"
+              src={gifNote01}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            Luz Fija - Vespucio (2026)
           </li>
           <li>
             <img
@@ -174,16 +188,6 @@ function Sidebar() {
               decoding="async"
             />
             Guillermo — Guitarra
-          </li>
-          <li>
-            <img
-              className="discografia-note-gif"
-              src={gifBand04}
-              alt=""
-              loading="lazy"
-              decoding="async"
-            />
-            Alejandro — Bajo
           </li>
           <li className="banda-item-separator">
             <img

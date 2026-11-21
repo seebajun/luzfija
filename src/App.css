@@ -16,7 +16,7 @@
 }
 
 body {
-  padding-bottom: 3.5rem;
+  padding-bottom: 6rem;
   background-color: #fdfbd4;
   font-family: monospace;
   color: white;
@@ -139,6 +139,6 @@ blink {
   }
 
   body {
-    padding-bottom: 3rem;
+    padding-bottom: 5.5rem;
   }
 }

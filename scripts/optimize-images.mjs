@@ -117,7 +117,7 @@ async function processAll() {
   console.log(`Fallidos: ${failed}`);
   console.log("=================================\n");
 
-  for (const name of ["Fondo01", "Fondo02"]) {
+  for (const name of ["Fondo01", "Fondo02", "Fondo03"]) {
     const srcPath = join(fondoDir, name + ".webp");
     const mobPath = join(fondoDir, name + "_480.webp");
     if (!existsSync(srcPath)) continue;

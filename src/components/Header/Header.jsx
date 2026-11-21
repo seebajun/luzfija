@@ -21,13 +21,19 @@ function Header() {
         <Link to="/" className="band-link">
           <img src={logoFull} alt="Luz Fija" className="header-logo" />
         </Link>
-        <p className="single-title">「 VESPUCIO 」</p>
+        <p className="single-title">「 PACTO 」</p>
       </div>
 
       <nav className="nav-links">
-        <Link to="/" className="nav-btn home-nav">HOME</Link>
-        <Link to="/gear" className="nav-btn gear-nav">GEAR</Link>
-        <Link to="/contacto" className="nav-btn contacto-nav">CONTACTO</Link>
+        <Link to="/" className="nav-btn home-nav">
+          HOME
+        </Link>
+        <Link to="/gear" className="nav-btn gear-nav">
+          GEAR
+        </Link>
+        <Link to="/contacto" className="nav-btn contacto-nav">
+          CONTACTO
+        </Link>
         <a
           href="https://www.instagram.com/luz.fija/"
           target="_blank"

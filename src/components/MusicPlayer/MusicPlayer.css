@@ -14,6 +14,37 @@
   gap: 0.15rem;
 }
 
+.wa-playlist {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.wa-track {
+  background: #1a1a1a;
+  border: 1px solid #00ff41;
+  color: #00ff41;
+  font-family: 'Courier New', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+}
+
+.wa-track:hover {
+  background: #003b12;
+}
+
+.wa-track.active {
+  background: #00ff41;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 6px #00ff41;
+}
+
 .wa-led {
   display: flex;
   align-items: center;
@@ -179,6 +210,11 @@
   .wa-led {
     gap: 0.3rem;
     padding: 0.1rem 0.3rem;
+  }
+
+  .wa-track {
+    font-size: 0.5rem;
+    padding: 0.1rem 0.35rem;
   }
 
   .wa-eq {

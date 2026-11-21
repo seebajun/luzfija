@@ -7,6 +7,8 @@ import gifCool01 from "../../assets/GIF/gif_cool01.gif";
 import gifCool02 from "../../assets/GIF/gif_cool02.gif";
 import gifFfix01 from "../../assets/GIF/gif_ffix01.gif";
 import gifKof01 from "../../assets/GIF/gif_kof01.gif";
+import gifNew05 from "../../assets/GIF/gif_new05.gif";
+import gifStar01 from "../../assets/GIF/gif_star01.gif";
 import "./HomePage.css";
 
 function HomePage() {
@@ -18,29 +20,33 @@ function HomePage() {
         <Sidebar />
 
         <main className="main-content">
-          <BioCard title="BIOGRAFÍA" dropcapLetter="L" gif={gifCool01}>
-            uzFija es una banda Chilena formada en Santiago, comuna de La
-            Florida, en el año 2020 por 4 amigos que coinciden en un trabajo de
-            retail en un centro comercial de la capital. A fines de 2021 debutan
-            con su EP homónimo, trabajo que movieron en espacios limitados y que
-            tuvo una cálida recepción, marcado por atmósferas DreamPop y
-            Shoegaze como también el filo y energía del Post Punk. Luego de un
-            periodo de inactividad debido a la pandemia, sumado al ir y venir
-            personal, el proyecto se reactiva en 2024 con pequeños cambios de
-            integrantes y nuevas composiciones, con un foco sónico evolutivo
-            respecto a su trabajo anterior. Es así como ‘Vespucio’ se erige como
-            carta de presentación de este nuevo proceso, acudiendo a una
-            sonoridad más oscura, heredera del cold wave y el rock gótico, sin
-            abandonar el Shoegaze ni el Post Punk, elementos que siguen siendo
-            pilares de la propuesta. Actualmente la banda se encuentra
-            trabajando en su disco debut, abarcando un espectro más amplio de
-            influencias a las ya mencionadas, destacando los elementos
-            electrónicos glitch tipo hyper-pop, sonoridades oscuras
-            referenciadas de bandas visual kei como Buck-Thick y estructuras
-            compositivas cercanas al post-rock.
+          <BioCard
+            title="Pacto"
+            dropcapLetter="P"
+            gif={gifNew05}
+            gifAlign="left"
+          >
+            Pacto es el segundo adelanto del próximo EP de Luzfija, una canción
+            que despliega su faceta más frenética, combinando la intensidad del
+            Postpunk con una marcada exploración electrónica, donde los recursos
+            de manipulación glitch dialogan con guitarras distorsionadas,
+            desembocando en una sonoridad abrasiva y dinámica.
+            <br />
+            <br />
+            Líricamente inspirada en el poema «La palabra», de la poeta chilena
+            Stella Díaz Varín, cuya temática gira en torno a la búsqueda
+            obsesiva de una palabra oculta, vinculada a un pacto secreto de la
+            infancia. El poema recorre la lucha por encontrarla y el triunfo que
+            supone su hallazgo, para finalmente desembocar en una sensación de
+            frustración y derrota al no encontrarla.
+            <br />
+            <br />
+            'Pacto' articula tanto en lo musical y lírico la urgencia y la lucha
+            personal, con una sensación de ansiedad frente al inexorable paso
+            del tiempo
             <img
-              className="expanded-gif expanded-gif-big"
-              src={gifKof01}
+              className="expanded-gif"
+              src={gifStar01}
               alt=""
               loading="lazy"
               decoding="async"
@@ -89,6 +95,44 @@ function HomePage() {
             <img
               className="expanded-gif"
               src={gifFfix01}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+          </BioCard>
+
+          <BioCard title="BIOGRAFÍA" dropcapLetter="L" gif={gifCool01}>
+            uzfija se forma en 2020 en la comuna de La Florida, Santiago, a
+            partir de la amistad forjada entre cuatro compañeros de trabajo del
+            rubro del retail. A fines de 2021, la banda debuta con un EP
+            homónimo que explora el formato canción, envuelto en atmósferas
+            sonoras propias del Dream Pop y el Shoegaze, sin dejar de lado la
+            energía y el filo característicos del Postpunk. En 2024, tras la
+            resaca de la pandemia y una serie de vaivenes personales, Luzfija
+            inicia una nueva etapa marcada tanto por cambios en su formación
+            como por una evolución en su propuesta musical. En este contexto,
+            «Vespucio» surge como carta de presentación de esta renovada
+            identidad sonora. La banda se adentra en territorios más oscuros y
+            electrónicos, recogiendo influencias del Cold Wave y el Rock Gótico,
+            pero sin abandonar los elementos del Shoegaze y el Postpunk que
+            continúan siendo pilares fundamentales de su propuesta. Actualmente,
+            Luzfija se encuentra ad-portas de estrenar su segundo EP, previsto
+            para comienzos de 2027. Este nuevo trabajo profundiza en el universo
+            sonoro que la banda ha venido desarrollando, expandiendo sus
+            fronteras hacia estructuras más experimentales, cercanas al
+            Post-Rock, y atmósferas de una oscuridad melódica que recoge
+            influencias del Visual Kei japonés, particularmente de bandas como
+            Buck-Tick. A su vez, incorpora una dimensión electrónica más
+            pronunciada, donde destacan recursos derivados del Glitch producto
+            de influencias como el IDM y el Hyperpop, configurando una propuesta
+            que transita entre la intensidad, la experimentación y la
+            melancolía. En este recorrido, «Pacto», segundo sencillo de adelanto
+            del EP, representa una de sus facetas más frenéticas, poniendo en
+            relieve la diversidad de matices que atraviesan esta nueva etapa
+            creativa.
+            <img
+              className="expanded-gif expanded-gif-big"
+              src={gifKof01}
               alt=""
               loading="lazy"
               decoding="async"
