@@ -1,26 +1,37 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import photo01 from "../../assets/photos/photo01.webp";
-import photo02 from "../../assets/photos/photo02.webp";
-import photo03 from "../../assets/photos/photo03.webp";
-import photo04 from "../../assets/photos/photo04.webp";
 import photo05 from "../../assets/photos/photo05.webp";
-import photo06 from "../../assets/photos/photo06.webp";
 import photo01Thumb from "../../assets/thumbs/photo01_thumb.webp";
-import photo02Thumb from "../../assets/thumbs/photo02_thumb.webp";
-import photo03Thumb from "../../assets/thumbs/photo03_thumb.webp";
-import photo04Thumb from "../../assets/thumbs/photo04_thumb.webp";
 import photo05Thumb from "../../assets/thumbs/photo05_thumb.webp";
-import photo06Thumb from "../../assets/thumbs/photo06_thumb.webp";
 import "./PhotoGallery.css";
 
+const pactoPhotosModules = import.meta.glob(
+  "../../assets/photos/photo_pacto*.webp",
+  { eager: true, import: "default" },
+);
+
+const pactoThumbsModules = import.meta.glob(
+  "../../assets/thumbs/photo_pacto*_thumb.webp",
+  { eager: true, import: "default" },
+);
+
+const pactoPhotos = Object.entries(pactoPhotosModules)
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([path, src]) => {
+    const name = path.split("/").pop().replace(/\.webp$/, "");
+    const thumbPath = `../../assets/thumbs/${name}_thumb.webp`;
+    return {
+      src,
+      thumb: pactoThumbsModules[thumbPath] || src,
+      alt: name,
+    };
+  });
+
 const photos = [
+  ...pactoPhotos,
   { src: photo01, thumb: photo01Thumb, alt: "Photo 01" },
-  { src: photo02, thumb: photo02Thumb, alt: "Photo 02" },
-  { src: photo03, thumb: photo03Thumb, alt: "Photo 03" },
-  { src: photo04, thumb: photo04Thumb, alt: "Photo 04" },
   { src: photo05, thumb: photo05Thumb, alt: "Photo 05" },
-  { src: photo06, thumb: photo06Thumb, alt: "Photo 06" },
 ];
 
 function PhotoGallery() {

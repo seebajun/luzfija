@@ -51,7 +51,7 @@ function Sidebar() {
         </div>
 
         <div className="news-item">
-          <span className="news-date">13.08.2026</span>
+          <span className="news-date">xx.xx.2026</span>
           <p>
             <img
               className="news-star-gif"
@@ -65,7 +65,7 @@ function Sidebar() {
         </div>
 
         <div className="news-item">
-          <span className="news-date">31.08.2026</span>
+          <span className="news-date">29.12.2026</span>
           <p>
             <img
               className="news-star-gif"
@@ -111,7 +111,7 @@ function Sidebar() {
               loading="lazy"
               decoding="async"
             />
-            Luz Fija - Pacto (2026)
+            LuzFija - Pacto (2026)
           </li>
 
           <li>
@@ -122,7 +122,7 @@ function Sidebar() {
               loading="lazy"
               decoding="async"
             />
-            Luz Fija - Vespucio (2026)
+            LuzFija - Vespucio (2026)
           </li>
           <li>
             <img
@@ -132,7 +132,7 @@ function Sidebar() {
               loading="lazy"
               decoding="async"
             />
-            Luz Fija EP 2021
+            LuzFija EP 2021
           </li>
           <li>
             <img

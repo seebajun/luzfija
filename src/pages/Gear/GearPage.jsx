@@ -6,7 +6,6 @@ import gifCool04 from "../../assets/GIF/gif_cool04.gif";
 import gifCloud01 from "../../assets/GIF/gif_cloud01.gif";
 import gifCloud02 from "../../assets/GIF/gif_cloud02.gif";
 import gifCloud03 from "../../assets/GIF/gif_cloud03.gif";
-import gifCloud04 from "../../assets/GIF/gif_cloud04.gif";
 import gifCloud05 from "../../assets/GIF/gif_cloud05.gif";
 
 const members = [
@@ -30,13 +29,6 @@ const members = [
     role: "Guitarra",
     gif: gifCloud03,
     gifPos: "right",
-  },
-  {
-    slug: "alejandro",
-    name: "Alejandro",
-    role: "Bajo",
-    gif: gifCloud04,
-    gifPos: "center",
   },
   {
     slug: "monitoreo",

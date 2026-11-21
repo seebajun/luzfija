@@ -12,7 +12,7 @@ const targetDirs = [
 const extensions = new Set([".webp"]);
 const quality = 50;
 const heroQuality = 75;
-const heroTargets = new Set(["photo06"]);
+const heroTargets = new Set(["photo_pacto03"]);
 const heroVariants = [
   { suffix: "_1080", width: 1080 },
   { suffix: "_664", width: 664 },

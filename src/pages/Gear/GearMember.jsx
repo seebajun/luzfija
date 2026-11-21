@@ -13,7 +13,6 @@ import photoGonzalo03 from "../../assets/photos_gear/photo_gonzalo_gear03.webp";
 import photoGuillermo from "../../assets/photos_gear/photo_guillermo_gear.webp";
 import photoGuillermoBag from "../../assets/photos_gear/photo_guillermo_gear_bag.webp";
 import photoGuillermoStrap from "../../assets/photos_gear/photo_guillermo_gear_strap.webp";
-import photoAlejandro from "../../assets/photos_gear/photo_alejandro_gear_pedales.webp";
 import photoMonitoreo from "../../assets/photos_gear/photo_gear_monitoreo.webp";
 import photoMonitoreo02 from "../../assets/photos_gear/photo_gear_monitoreo02.webp";
 import photoArielThumb from "../../assets/thumbs_gear/photo_ariel_gear_thumb.webp";
@@ -24,7 +23,6 @@ import photoGonzalo03Thumb from "../../assets/thumbs_gear/photo_gonzalo_gear03_t
 import photoGuillermoThumb from "../../assets/thumbs_gear/photo_guillermo_gear_thumb.webp";
 import photoGuillermoBagThumb from "../../assets/thumbs_gear/photo_guillermo_gear_bag_thumb.webp";
 import photoGuillermoStrapThumb from "../../assets/thumbs_gear/photo_guillermo_gear_strap_thumb.webp";
-import photoAlejandroThumb from "../../assets/thumbs_gear/photo_alejandro_gear_pedales_thumb.webp";
 import photoMonitoreoThumb from "../../assets/thumbs_gear/photo_gear_monitoreo_thumb.webp";
 import photoMonitoreo02Thumb from "../../assets/thumbs_gear/photo_gear_monitoreo02_thumb.webp";
 
@@ -130,26 +128,6 @@ const gearData = {
       },
     ],
   },
-  alejandro: {
-    name: "Alejandro",
-    role: "Bajo",
-    categories: [
-      {
-        title: "Bajo",
-        items: [{ gear: "Squier PJB" }],
-      },
-      {
-        title: "Pedales Bajo",
-        items: [
-          { gear: "Futuro compresor (?)" },
-          { gear: "Joyo Tidalwave" },
-          { gear: "DS rng" },
-          { gear: "Chorus rng" },
-          { gear: "Two Notes Torpedo C.A.B." },
-        ],
-      },
-    ],
-  },
   monitoreo: {
     name: "Monitoreo",
     role: "Monitoreo",
@@ -177,7 +155,6 @@ function GearMember() {
     ariel: [photoAriel, photoAriel2],
     gonzalo: [photoGonzalo01, photoGonzalo02, photoGonzalo03],
     guillermo: [photoGuillermo, photoGuillermoBag, photoGuillermoStrap],
-    alejandro: [photoAlejandro],
     monitoreo: [photoMonitoreo, photoMonitoreo02],
   };
 
@@ -189,7 +166,6 @@ function GearMember() {
       photoGuillermoBagThumb,
       photoGuillermoStrapThumb,
     ],
-    alejandro: [photoAlejandroThumb],
     monitoreo: [photoMonitoreoThumb, photoMonitoreo02Thumb],
   };
 

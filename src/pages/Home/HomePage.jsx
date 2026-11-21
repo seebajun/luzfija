@@ -104,25 +104,34 @@ function HomePage() {
           <BioCard title="BIOGRAFÍA" dropcapLetter="L" gif={gifCool01}>
             uzfija se forma en 2020 en la comuna de La Florida, Santiago, a
             partir de la amistad forjada entre cuatro compañeros de trabajo del
-            rubro del retail. A fines de 2021, la banda debuta con un EP
-            homónimo que explora el formato canción, envuelto en atmósferas
-            sonoras propias del Dream Pop y el Shoegaze, sin dejar de lado la
-            energía y el filo característicos del Postpunk. En 2024, tras la
-            resaca de la pandemia y una serie de vaivenes personales, Luzfija
-            inicia una nueva etapa marcada tanto por cambios en su formación
-            como por una evolución en su propuesta musical. En este contexto,
-            «Vespucio» surge como carta de presentación de esta renovada
-            identidad sonora. La banda se adentra en territorios más oscuros y
-            electrónicos, recogiendo influencias del Cold Wave y el Rock Gótico,
-            pero sin abandonar los elementos del Shoegaze y el Postpunk que
-            continúan siendo pilares fundamentales de su propuesta. Actualmente,
-            Luzfija se encuentra ad-portas de estrenar su segundo EP, previsto
-            para comienzos de 2027. Este nuevo trabajo profundiza en el universo
-            sonoro que la banda ha venido desarrollando, expandiendo sus
-            fronteras hacia estructuras más experimentales, cercanas al
-            Post-Rock, y atmósferas de una oscuridad melódica que recoge
-            influencias del Visual Kei japonés, particularmente de bandas como
-            Buck-Tick. A su vez, incorpora una dimensión electrónica más
+            rubro del retail.
+            <br />
+            <br />
+            A fines de 2021, la banda debuta con un EP homónimo que explora el
+            formato canción, envuelto en atmósferas sonoras propias del Dream
+            Pop y el Shoegaze, sin dejar de lado la energía y el filo
+            característicos del Postpunk.
+            <br />
+            <br />
+            En 2024, tras la resaca de la pandemia y una serie de vaivenes
+            personales, Luzfija inicia una nueva etapa marcada tanto por cambios
+            en su formación como por una evolución en su propuesta musical.{" "}
+            <br />
+            <br />
+            En este contexto, «Vespucio» surge como carta de presentación de
+            esta renovada identidad sonora. La banda se adentra en territorios
+            más oscuros y electrónicos, recogiendo influencias del Cold Wave y
+            el Rock Gótico, pero sin abandonar los elementos del Shoegaze y el
+            Postpunk que continúan siendo pilares fundamentales de su propuesta.
+            <br />
+            <br />
+            Actualmente, Luzfija se encuentra ad-portas de estrenar su segundo
+            EP, previsto para comienzos de 2027. Este nuevo trabajo profundiza
+            en el universo sonoro que la banda ha venido desarrollando,
+            expandiendo sus fronteras hacia estructuras más experimentales,
+            cercanas al Post-Rock, y atmósferas de una oscuridad melódica que
+            recoge influencias del Visual Kei japonés, particularmente de bandas
+            como Buck-Tick. A su vez, incorpora una dimensión electrónica más
             pronunciada, donde destacan recursos derivados del Glitch producto
             de influencias como el IDM y el Hyperpop, configurando una propuesta
             que transita entre la intensidad, la experimentación y la
