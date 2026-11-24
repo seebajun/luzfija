@@ -10,7 +10,6 @@ import gifNote01 from "../../assets/GIF/gif_note01.gif";
 import gifBand01 from "../../assets/GIF/gif_band01.gif";
 import gifBand02 from "../../assets/GIF/gif_band02.gif";
 import gifBand03 from "../../assets/GIF/gif_band03.gif";
-import gifBand04 from "../../assets/GIF/gif_band04.gif";
 import gifBand05 from "../../assets/GIF/gif_band05.gif";
 import gifRodo from "../../assets/GIF/gif_rodo.gif";
 import "./Sidebar.css";
