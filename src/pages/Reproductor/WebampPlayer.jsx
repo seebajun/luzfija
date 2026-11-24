@@ -5,7 +5,9 @@ import { SKINS } from "../../data/skins";
 
 const BASE_WIDTH = 275;
 const BASE_HEIGHT = 406; // main (116) + eq (116) + playlist (116 + 2*29)
-const FIXED_SCALE = 1.5;
+const DESKTOP_SCALE = 1.5;
+const MOBILE_SCALE = 1.0;
+const MOBILE_MEDIA_QUERY = "(max-width: 768px)";
 
 const WEBAMP_AVAILABLE_SKINS = SKINS.filter((s) => Boolean(s.url)).map((s) => ({
   url: s.url,
@@ -20,9 +22,21 @@ function WebampPlayer({ skinUrl, onSkinError }) {
   const initialSkinUrlRef = useRef(skinUrl);
   const [isReady, setIsReady] = useState(false);
   const [isClosed, setIsClosed] = useState(false);
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia(MOBILE_MEDIA_QUERY).matches
+      : false,
+  );
   const [errorMsg, setErrorMsg] = useState(() =>
     BROWSER_SUPPORTED ? "" : "Tu navegador no soporta Webamp.",
   );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(MOBILE_MEDIA_QUERY);
+    const handleChange = (event) => setIsMobile(event.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   useEffect(() => {
     const container = mountRef.current;
@@ -151,6 +165,8 @@ function WebampPlayer({ skinUrl, onSkinError }) {
     setIsClosed(false);
   };
 
+  const scale = isMobile ? MOBILE_SCALE : DESKTOP_SCALE;
+
   return (
     <div className="webamp-shell">
       {!isReady && !errorMsg && (
@@ -176,8 +192,8 @@ function WebampPlayer({ skinUrl, onSkinError }) {
       <div
         className="webamp-viewport"
         style={{
-          width: `${Math.ceil(BASE_WIDTH * FIXED_SCALE)}px`,
-          height: `${Math.ceil(BASE_HEIGHT * FIXED_SCALE)}px`,
+          width: `${Math.ceil(BASE_WIDTH * scale)}px`,
+          height: `${Math.ceil(BASE_HEIGHT * scale)}px`,
         }}
       >
         <div
@@ -186,7 +202,7 @@ function WebampPlayer({ skinUrl, onSkinError }) {
           style={{
             width: `${BASE_WIDTH}px`,
             height: `${BASE_HEIGHT}px`,
-            transform: `scale(${FIXED_SCALE})`,
+            transform: `scale(${scale})`,
             transformOrigin: "top left",
           }}
         />

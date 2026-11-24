@@ -64,6 +64,26 @@ export const SKINS = [
     name: "Samurai Champloo",
     url: "/skins/samurai-champloo.wsz",
   },
+  {
+    id: "hatsune-miku",
+    name: "Hatsune Miku",
+    url: "/skins/hatsune-miku.wsz",
+  },
+  {
+    id: "che-guevara",
+    name: "Che Guevara",
+    url: "/skins/che-guevara.wsz",
+  },
+  {
+    id: "haruhi-suzumiya",
+    name: "Haruhi Suzumiya",
+    url: "/skins/haruhi-suzumiya.wsz",
+  },
+  {
+    id: "hunter-x-hunter",
+    name: "Hunter x Hunter",
+    url: "/skins/hunter-x-hunter.wsz",
+  },
 ];
 
 export const DEFAULT_SKIN_ID = "winamp-classic";
