@@ -9,6 +9,7 @@ const HomePage = lazy(() => import('./pages/Home/HomePage.jsx'))
 const GearPage = lazy(() => import('./pages/Gear/GearPage.jsx'))
 const GearMember = lazy(() => import('./pages/Gear/GearMember.jsx'))
 const ContactoPage = lazy(() => import('./pages/Contacto/ContactoPage.jsx'))
+const ReproductorPage = lazy(() => import('./pages/Reproductor/ReproductorPage.jsx'))
 
 function PageFallback() {
   return <div className="y2k-container" />
@@ -48,6 +49,14 @@ createRoot(document.getElementById('root')).render(
             element={
               <Suspense fallback={<PageFallback />}>
                 <ContactoPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="reproductor"
+            element={
+              <Suspense fallback={<PageFallback />}>
+                <ReproductorPage />
               </Suspense>
             }
           />

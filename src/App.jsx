@@ -12,10 +12,16 @@ import Fondo03Mobile from "./assets/fondos/Fondo03_480.webp";
 
 function App() {
   const { pathname } = useLocation();
+  const isReproductorPage = pathname.replace(/\/+$/, "") === "/reproductor";
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    document.body.classList.toggle("no-bottom-player", isReproductorPage);
+    return () => document.body.classList.remove("no-bottom-player");
+  }, [isReproductorPage]);
 
   useEffect(() => {
     const isMobile = window.matchMedia("(max-width: 768px)");
@@ -35,7 +41,7 @@ function App() {
       <main className="app-main">
         <Outlet />
       </main>
-      <MusicPlayer />
+      {!isReproductorPage && <MusicPlayer />}
       <Footer />
     </div>
   );

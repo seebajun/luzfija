@@ -24,6 +24,10 @@ body {
   position: relative;
 }
 
+body.no-bottom-player {
+  padding-bottom: 0;
+}
+
 .y2k-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -140,5 +144,9 @@ blink {
 
   body {
     padding-bottom: 5.5rem;
+  }
+
+  body.no-bottom-player {
+    padding-bottom: 0;
   }
 }
