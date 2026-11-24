@@ -63,6 +63,14 @@ function WebampPlayer({ skinUrl, onSkinError }) {
       options.initialSkin = { url: initialSkinUrlRef.current };
     }
 
+    const blockVolumeWheel = (e) => {
+      const inPlaylistTracks = Boolean(e.target?.closest?.(".playlist-tracks"));
+      if (!(inPlaylistTracks && TRACKS.length > 7)) {
+        e.stopPropagation();
+      }
+    };
+    container.addEventListener("wheel", blockVolumeWheel, { capture: true });
+
     const webamp = new Webamp(options);
     webampRef.current = webamp;
 
@@ -89,6 +97,9 @@ function WebampPlayer({ skinUrl, onSkinError }) {
 
     return () => {
       cancelled = true;
+      container.removeEventListener("wheel", blockVolumeWheel, {
+        capture: true,
+      });
       unsubscribeClose();
       if (webampRef.current === webamp) {
         webampRef.current = null;
@@ -102,11 +113,10 @@ function WebampPlayer({ skinUrl, onSkinError }) {
     };
   }, [onSkinError]);
 
-  // Cambia skin en vivo sin interrumpir la reproduccion
+  // Cambia skin en vivo sin interrumpir la reproduccion (incluyendo volver a Classic)
   useEffect(() => {
     const webamp = webampRef.current;
     if (!webamp || !isReady) return;
-    if (!skinUrl) return;
     if (skinUrl === initialSkinUrlRef.current) return;
 
     let cancelled = false;
@@ -114,6 +124,10 @@ function WebampPlayer({ skinUrl, onSkinError }) {
 
     Promise.resolve()
       .then(() => {
+        if (!skinUrl) {
+          webamp.store.dispatch({ type: "LOAD_DEFAULT_SKIN" });
+          return undefined;
+        }
         webamp.setSkinFromUrl(skinUrl);
         return webamp.skinIsLoaded();
       })

@@ -16,16 +16,12 @@ function ReproductorPage() {
     return DEFAULT_SKIN_ID;
   });
   const [skinFeedback, setSkinFeedback] = useState("");
-  const [classicInstanceKey, setClassicInstanceKey] = useState(0);
 
   const activeSkin =
     SKINS.find((s) => s.id === activeSkinId) || SKINS[0];
 
   const handleSelectSkin = (skin) => {
     setSkinFeedback("");
-    if (skin.id === "winamp-classic" && activeSkin?.url) {
-      setClassicInstanceKey((k) => k + 1);
-    }
     setActiveSkinId(skin.id);
     try {
       localStorage.setItem(STORAGE_KEY, skin.id);
@@ -64,7 +60,6 @@ function ReproductorPage() {
 
       <div className="winamp-stage">
         <WebampPlayer
-          key={classicInstanceKey}
           skinUrl={activeSkin.url}
           onSkinError={handleWebampError}
         />
