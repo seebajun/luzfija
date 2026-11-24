@@ -26,6 +26,12 @@ body {
 
 body.no-bottom-player {
   padding-bottom: 0;
+  overflow-x: clip;
+}
+
+body.no-bottom-player .app-layout {
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .y2k-container {

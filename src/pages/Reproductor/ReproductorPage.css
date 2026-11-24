@@ -5,7 +5,7 @@
   justify-content: flex-start;
   gap: 1.75rem;
   padding-top: 1.75rem;
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
 }
 
 /* ================= SKIN SWITCHER BAR ================= */
@@ -161,7 +161,24 @@
 @media (max-width: 768px) {
   .reproductor-page {
     padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3.5rem;
     gap: 1.25rem;
   }
+}
+
+/* ================= WEBAMP CONTEXT MENUS (EQ PRESETS, ETC.) ================= */
+#webamp-context-menu {
+  z-index: 250 !important;
+}
+
+#webamp-context-menu .context-menu ul {
+  max-height: calc(100dvh - 120px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
+}
+
+#webamp-context-menu .context-menu li.parent.submenu-open > ul {
+  display: block;
 }
